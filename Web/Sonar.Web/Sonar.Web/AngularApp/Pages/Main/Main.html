@@ -17,5 +17,19 @@
 </modal>
 
 <modal title="Add new event" visible="visibilityOptions.isAddEventModalVisible">
-    NEW EVENT
+    ADD NEW EVENT
+
+    <div class="form-bottom">
+        <form role="form" action="" method="post" class="login-form">
+            <div class="form-group">
+                <label class="sr-only" for="form-name">Event name</label>
+                <input ng-model="newEvent.name" type="text" name="form-name" placeholder="Event name" class="form-name form-control" id="form-event-name">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="form-event-description">Event description</label>
+                <input ng-model="newEvent.description" type="text" name="form-event-description" placeholder="Event description" class="form-event-description form-control" id="form-event-description">
+            </div>
+            <button type="submit" class="btn" ng-click="submitEvent()">Add new event</button>
+        </form>
+    </div>
 </modal>

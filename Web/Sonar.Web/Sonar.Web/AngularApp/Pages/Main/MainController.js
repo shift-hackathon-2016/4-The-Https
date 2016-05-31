@@ -11,6 +11,10 @@ function MainController($rootScope, $scope, $http) {
         $scope.visibilityOptions.isAddEventModalVisible = false;
     });
 
+    $scope.submitEvent = function() {
+        throw Error('not implemented');
+    };
+
     $scope.mockEvents = [
         { id: 1, title: 'First event', lat: -34.397, long: 150.644 },
         { id: 1, title: 'wfsg event', lat: -34.297, long: 150.644 },
