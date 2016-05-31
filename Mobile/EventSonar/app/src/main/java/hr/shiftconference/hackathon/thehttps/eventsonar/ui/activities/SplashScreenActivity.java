@@ -1,4 +1,4 @@
-package hr.shiftconference.hackathon.thehttps.eventsonar.ui;
+package hr.shiftconference.hackathon.thehttps.eventsonar.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

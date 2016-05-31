@@ -67,16 +67,16 @@ public class Event {
     private List<Comment> comment;
     @SerializedName("Person")
     @Expose
-    private Person person;
+    private String person;
     @SerializedName("EventType")
     @Expose
-    private EventType eventType;
+    private String eventType;
     @SerializedName("EventState")
     @Expose
-    private EventState eventState;
+    private String eventState;
     @SerializedName("Town")
     @Expose
-    private Town town;
+    private String town;
     @SerializedName("EventPerson")
     @Expose
     private List<EventPerson> eventPerson;
@@ -210,35 +210,35 @@ public class Event {
         this.comment = comment;
     }
 
-    public Person getPerson() {
+    public String getPerson() {
         return person;
     }
 
-    public void setPerson(Person person) {
+    public void setPerson(String person) {
         this.person = person;
     }
 
-    public EventType getEventType() {
+    public String getEventType() {
         return eventType;
     }
 
-    public void setEventType(EventType eventType) {
+    public void setEventType(String eventType) {
         this.eventType = eventType;
     }
 
-    public EventState getEventState() {
+    public String getEventState() {
         return eventState;
     }
 
-    public void setEventState(EventState eventState) {
+    public void setEventState(String eventState) {
         this.eventState = eventState;
     }
 
-    public Town getTown() {
+    public String getTown() {
         return town;
     }
 
-    public void setTown(Town town) {
+    public void setTown(String town) {
         this.town = town;
     }
 
