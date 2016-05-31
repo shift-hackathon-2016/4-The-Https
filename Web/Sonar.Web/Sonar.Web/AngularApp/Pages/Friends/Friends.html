@@ -1,41 +1,29 @@
-﻿
-
-<p>Friends page</p>
+﻿<p>Your friends</p>
 <div>
-    <div style="float:left; margin-left:20%;">
-           
-            
-            <ul ng-repeat="muz in friends "  style="background-color:white;"  >
-                <li> <span><img src="{{muz.ImageUrl}}"</span></li>
-                    <li> <span >{{muz.FirstName}}</span></li>
-                <li> <span> {{muz.LastName}}</span></li>
-                <li> <span>{{muz.BirthDate}}</span></li>
-                <li> <span> {{muz.Rating}}</span></li>
+    <div class="col-xs-8">
+
+        <div class="row" ng-repeat="friend in friends " style="background-color: white;">
+            <span class="col-xs-4">
+                <img src="{{friend.ImageUrl}}" />
+            </span>
+            <span class="col-xs-6">
+                <a href="#/profile/{{friend.Id}}">
+                    <span>{{friend.FirstName}}</span>
+                    <span> {{friend.LastName}}</span>
+                </a>
+
+                <br />
                 
-                <li> <span>{{muz.Username}}</span></li>
-                <li> <span>{{muz.Email}}</span></li>
-                
-              </ul>
+                <span>{{friend.Username}}</span>
+                <span>{{friend.Email}}</span>
+                <br/>
+
+                <span>{{friend.BirthDate}}</span>
+                <span> {{friend.Rating}}</span>
+
+            </span>
+
+        </div>
 
     </div>
-    <div style="float:right; margin-right:20%">
-       
-
-
-        <ul ng-repeat="muz in friends " style="background-color:white;">
-            <li> <span><img src="{{muz.ImageUrl}}"></span></li>
-            <li> <span>{{muz.FirstName}}</span></li>
-            <li> <span> {{muz.LastName}}</span></li>
-            <li> <span>{{muz.BirthDate}}</span></li>
-            <li> <span> {{muz.Rating}}</span></li>
-
-            <li> <span>{{muz.Username}}</span></li>
-            <li> <span>{{muz.Email}}</span></li>
-
-        </ul>
-
-
-    </div>
-
-
 </div>

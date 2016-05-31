@@ -334,6 +334,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\EventSonar - Web Deploy.pubxml" />
+    <Content Include="Vendor\Scripts\Angular\angular.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

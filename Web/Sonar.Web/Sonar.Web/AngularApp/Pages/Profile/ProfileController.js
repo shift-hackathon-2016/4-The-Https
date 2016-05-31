@@ -1,11 +1,13 @@
-﻿ProfileController.$inject = ["$scope", "$http"];
-function ProfileController($scope, $http) {
+﻿ProfileController.$inject = ["$scope", "$http", "$routeParams"];
+function ProfileController($scope, $http, $routeParams) {
+    var userId = $routeParams.id || 14;
+
     $scope.isUpdating = function (setValue) {
         return (setValue == true) ? setValue : false;
     }
 
-    setOtherFields = function () {
-        $scope.profileViewModel.Id = 14;
+    var setOtherFields = function () {
+        $scope.profileViewModel.Id = userId;
         $scope.profileViewModel.PersonTypeId = 3; // private account
         $scope.profileViewModel.Rating = 7;
         if ($scope.profileViewModel.Password == "" || $scope.profileViewModel.Password == undefined) {
@@ -42,7 +44,8 @@ function ProfileController($scope, $http) {
     }
 
     //$http.get('Api/ProfileApi/GetProfile/', { id: 0 }).then(function (response) {
-    $http.get('Api/ProfileApi/Get/').then(function (response) {
+    
+    $http.get('Api/ProfileApi/Get/', { params: { id: userId } }).then(function (response) {
         $scope.profileViewModel = response.data;
         setOtherFields();
     });

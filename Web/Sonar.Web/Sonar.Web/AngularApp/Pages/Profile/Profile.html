@@ -2,16 +2,10 @@
 
     <div style="float:left; margin-left:20%">
         <img class="avatar" ng-src="{{profileViewModel.ImageUrl}}" />
-
-
     </div>
-
-
 
     <div style="float:right; margin-right:40%">
 
-        <label>Profile ID:</label>
-        <input type="text" ng-value="profileViewModel.Id"></input>
         <label>First Name:</label>
         <input type="text" ng-model="profileViewModel.FirstName" name="form-firstname" placeholder="First Name..." class="form-firstname form-control" id="form-firstname">
         <label>Last Name:</label>
@@ -32,10 +26,6 @@
         <br />
         <p ng-model="updateProfileMessage"></p>
     </div>
-
-
-
-
 
 </div>
 <script type="text/javascript">
