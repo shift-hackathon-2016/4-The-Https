@@ -31,14 +31,22 @@ function addMarkerToMap(marker) {
         title: marker.title
     });
 
+    newMarker.addListener('click', function () {
+        alert('raise popup')
+    });
+
     currentMarkers.push(newMarker);
 }
 
 function mapLink(scope, element, attrs) {
 	var element = document.getElementById('googleMap');
 	googleMap = new google.maps.Map(element, {
-		zoom: 8,
+		zoom: 9,
 		center: new google.maps.LatLng(-34.397, 150.644)
+	});
+
+	googleMap.addListener("click", function (event) {
+	    alert('add new event');
 	});
 }
 
