@@ -10,7 +10,8 @@ function mapDirective() {
 		scope: {
 		    events: "=",
 		    visibilityOptions: "=",
-            location: "="
+		    location: "=",
+            currentlySelectedEvent:"="
 		},
 		templateUrl: 'AngularApp/Components/googleMap.html',
 		controller: mapController,
@@ -26,6 +27,7 @@ function mapController($scope) {
             var marker = addMarkerToMap(event);
 
             marker.addListener('click', function () {
+                $scope.currentlySelectedEvent = event; 
                 $scope.visibilityOptions.isEventDetailsModalVisible = true;
                 $scope.$apply();
             });
@@ -42,7 +44,7 @@ function addMarkerToMap(marker) {
     });
 
     newMarker.description = marker.Description;
-    newMarker.authorName = marker.AuthorName;
+    newMarker.personName = marker.Person;
 
     currentMarkers.push(newMarker);
     return newMarker;

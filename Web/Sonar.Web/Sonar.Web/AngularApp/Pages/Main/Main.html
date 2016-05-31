@@ -1,7 +1,11 @@
 ﻿
 
 <div class="col-xs-8">
-    <google-map events="events" visibility-options="visibilityOptions" location="currentlySelectedLocation"></google-map>
+    <google-map events="events"
+                visibility-options="visibilityOptions"
+                location="currentlySelectedLocation"
+                currently-selected-event="currentlySelectedEvent">
+    </google-map>
 </div>
 
 <div class="col-xs-4">
@@ -13,7 +17,12 @@
     </p>
 </div>
 
-<modal title="View event details" visible="visibilityOptions.isEventDetailsModalVisible">
+<!-- dobri ante.
+        objekt ti se zove currentlySelectedEvent
+        lijep pozdrav,
+        dobri mario
+        -->
+<modal title="View event" visible="visibilityOptions.isEventDetailsModalVisible">
     EVENT DETAILS
 </modal>
 

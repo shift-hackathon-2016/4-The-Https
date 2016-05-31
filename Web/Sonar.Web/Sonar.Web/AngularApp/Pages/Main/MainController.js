@@ -3,18 +3,19 @@ function MainController($rootScope, $scope, $http) {
     getAllEvents();
     $scope.newEvent = {};
     $scope.currentlySelectedLocation = {};
+    $scope.currentlySelectedEvent = {}
 
     $scope.isAddNewEventButtonDisabled = function () {
         return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventTypeId;
     };
 
     $scope.visibilityOptions = {
-        isModalVisible: false,
+        isEventDetailsModalVisible: false,
         isAddEventModalVisible: false
     };
 
     $rootScope.$on('eventModalClosed', function () {
-        $scope.visibilityOptions.isModalVisible = false;
+        $scope.visibilityOptions.isEventDetailsModalVisible = false;
         $scope.visibilityOptions.isAddEventModalVisible = false;
     });
 
