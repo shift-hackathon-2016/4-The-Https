@@ -6,6 +6,9 @@
         $routeProvider
          .when('/', new AngularPage('index'))
          .when('/login', new AngularPage('login'))
+          .when('/profile', new AngularPage('profile'))
+            .when('/friends', new AngularPage('Friends'))
+            .when('/events', new AngularPage('Events'))
          .otherwise({ redirectTo: '/' });
     }
 
