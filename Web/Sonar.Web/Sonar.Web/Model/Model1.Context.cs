@@ -13,10 +13,10 @@ namespace Sonar.Web.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class hackathon_shift_2016_testEntities1 : DbContext
+    public partial class hackathon_shift_2016_testEntities : DbContext
     {
-        public hackathon_shift_2016_testEntities1()
-            : base("name=hackathon_shift_2016_testEntities1")
+        public hackathon_shift_2016_testEntities()
+            : base("name=hackathon_shift_2016_testEntities")
         {
         }
     
