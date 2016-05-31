@@ -165,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\EventsApiController.cs" />
+    <Compile Include="API\FriendsApiController.cs" />
+    <Compile Include="API\LoginAPIController.cs" />
+    <Compile Include="API\ProfileApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -180,6 +183,7 @@
     <Compile Include="IdentityModels\AccountBindingModels.cs" />
     <Compile Include="IdentityModels\AccountViewModels.cs" />
     <Compile Include="IdentityModels\IdentityModels.cs" />
+    <Compile Include="Mappers\PersonMapper.cs" />
     <Compile Include="Model\Comment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -232,6 +236,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\PersonVM.cs" />
     <Compile Include="ViewModel\TownVM.cs" />
     <Compile Include="ViewModel\EventVM.cs" />
   </ItemGroup>

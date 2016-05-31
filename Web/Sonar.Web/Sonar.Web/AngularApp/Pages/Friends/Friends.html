@@ -2,54 +2,38 @@
 
 <p>Friends page</p>
 <div>
-    <div style="float:left; margin-left:20%">
-            <ul>
-                <li>dsadsa          </li>
-                <li>sadsdsad</li>
-            </ul>
-        <ul>
-            <li>dsadsa          </li>
-            <li>sadsdsad</li>
-        </ul>
+    <div style="float:left; margin-left:20%;">
+           
             
-            <ul ng-repeat="muz in TablicaHitovas |filter:searchsve | limitTo:pageSize ">
+            <ul ng-repeat="muz in friends "  style="background-color:white;"  >
+                <li> <span><img src="{{muz.ImageUrl}}"</span></li>
+                    <li> <span >{{muz.FirstName}}</span></li>
+                <li> <span> {{muz.LastName}}</span></li>
+                <li> <span>{{muz.BirthDate}}</span></li>
+                <li> <span> {{muz.Rating}}</span></li>
                 
-                    <li> <span ng-model="Imezapret">{{muz.Ime}}</span></li>
-                <li> <span> hallo{{muz.Prezime}}</span></li>
-                <li> <span>sdasd{{muz.Adresa}}</span></li>
-                <li> <span>{{muz.PostanskiBr}}</span></li>
-                <li> <span>{{muz.Grad}}</span></li>
-                <li> <span>{{muz.Drzava}}</span></li>
+                <li> <span>{{muz.Username}}</span></li>
                 <li> <span>{{muz.Email}}</span></li>
-                <li> <span><a href="#!/Index/Edit/{{muz.Id}}" class="thumb">Edit</a></span></li>
-                <li> <span><a href="#!/Index/Delete/{{muz.Id}}" class="thumb">Delete</a></span></li>
-                <li> <input type="checkbox" ng-model="muz.id" /></li>
+                
               </ul>
 
     </div>
     <div style="float:right; margin-right:20%">
-        <ul>
-            <li>dsadsa          </li>
-            <li>sadsdsad</li>
-        </ul>
-        <ul>
-            <li>dsadsa          </li>
-            <li>sadsdsad</li>
-        </ul>
+       
 
-        <ul ng-repeat="muz in TablicaHitovas |filter:searchsve | limitTo:pageSize ">
 
-            <li> <span ng-model="Imezapret">{{muz.Ime}}</span></li>
-            <li> <span> hallo{{muz.Prezime}}</span></li>
-            <li> <span>sdasd{{muz.Adresa}}</span></li>
-            <li> <span>{{muz.PostanskiBr}}</span></li>
-            <li> <span>{{muz.Grad}}</span></li>
-            <li> <span>{{muz.Drzava}}</span></li>
+        <ul ng-repeat="muz in friends " style="background-color:white;">
+            <li> <span><img src="{{muz.ImageUrl}}"></span></li>
+            <li> <span>{{muz.FirstName}}</span></li>
+            <li> <span> {{muz.LastName}}</span></li>
+            <li> <span>{{muz.BirthDate}}</span></li>
+            <li> <span> {{muz.Rating}}</span></li>
+
+            <li> <span>{{muz.Username}}</span></li>
             <li> <span>{{muz.Email}}</span></li>
-            <li> <span><a href="#!/Index/Edit/{{muz.Id}}" class="thumb">Edit</a></span></li>
-            <li> <span><a href="#!/Index/Delete/{{muz.Id}}" class="thumb">Delete</a></span></li>
-            <li> <input type="checkbox" ng-model="muz.id" /></li>
+
         </ul>
+
 
     </div>
 

@@ -24,7 +24,18 @@ namespace Sonar.Web.API
                 Latitude = e.Latitude,
                 Name = e.Name,
                 Description = e.Description,
-                AuthorName = e.Person.FirstName + " " + e.Person.LastName
+                AuthorName = e.Person.FirstName + " " + e.Person.LastName,
+                Id = e.Id,
+                StartDate = e.StartDate,
+                EndDate = e.EndDate,
+                Town = e.Town.Name,
+                TownId = e.TownID,
+                State = e.EventState.Name,
+                StateId = e.StateID,
+                UrlSlike = e.ImageUrl,
+                ContactNumber = e.Contact,
+                EventTypeName = e.EventType.Name,
+                EventTypeID = e.EventTypeID
             });
         }
 
