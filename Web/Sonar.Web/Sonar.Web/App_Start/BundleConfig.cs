@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Sonar.Web
 {
@@ -7,6 +6,11 @@ namespace Sonar.Web
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/vendorScripts").IncludeDirectory(
+                    "~/Vendor/Scripts", "*.js", true));
+
+            bundles.Add(new StyleBundle("~/vendorStyles").IncludeDirectory(
+                "~/Vendor/Styles", "*.css", true));
         }
     }
 }
