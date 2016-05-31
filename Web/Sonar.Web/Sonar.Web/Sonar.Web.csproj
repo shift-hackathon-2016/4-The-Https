@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -182,8 +183,48 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\config.js" />
+    <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
+    <Content Include="AngularApp\Pages\EventNear\EventNearController.js" />
+    <Content Include="AngularApp\Pages\NewEvent\NewEvent.html" />
+    <Content Include="AngularApp\Pages\NewEvent\NewEventController.js" />
+    <Content Include="AngularApp\Pages\Main\Main.html" />
+    <Content Include="AngularApp\Pages\Main\MainController.js" />
+    <Content Include="AngularApp\Pages\Friends\Friends.html" />
+    <Content Include="AngularApp\Pages\Friends\FriendsController.js" />
+    <Content Include="AngularApp\Pages\Index\Index.html" />
+    <Content Include="AngularApp\Pages\Index\indexController.js" />
+    <Content Include="AngularApp\Pages\Events\Events.html" />
+    <Content Include="AngularApp\Pages\Events\EventsController.js" />
+    <Content Include="AngularApp\Pages\Profile\Profile.html" />
+    <Content Include="AngularApp\Pages\Profile\ProfileController.js" />
+    <Content Include="AngularApp\Pages\Login\login.html" />
+    <Content Include="AngularApp\Pages\Login\loginController.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Objasnjenje.PNG" />
+    <Content Include="Style\Style.css" />
+    <Content Include="Vendor\Scripts\Angular\angular.js" />
+    <Content Include="Vendor\Scripts\Angular\angular.min.js" />
+    <Content Include="Vendor\Scripts\Angular\AngularJS-Toaster\toaster.js" />
+    <Content Include="Vendor\Scripts\Angular\AngularJS-Toaster\toaster.min.js" />
+    <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.js" />
+    <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.min.js" />
+    <Content Include="Vendor\Scripts\Bootstrap\bootstrap.js" />
+    <Content Include="Vendor\Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Vendor\Scripts\jQuery\jquery-2.2.2.js" />
+    <Content Include="Vendor\Scripts\jQuery\jquery-2.2.2.min.js" />
+    <Content Include="Vendor\Scripts\Underscore\underscore-min.js" />
+    <Content Include="Vendor\Scripts\Underscore\underscore.js" />
+    <Content Include="Vendor\Styles\Angular\AngularJS-Toaster\toaster.css" />
+    <Content Include="Vendor\Styles\Angular\AngularJS-Toaster\toaster.min.css" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap-theme.css" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap.css" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap.min.css" />
+    <Content Include="Vendor\Styles\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -192,7 +233,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -200,7 +241,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Vendor\Scripts\Angular\angular.min.js.map" />
+    <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.min.js.map" />
+    <Content Include="Vendor\Scripts\Underscore\underscore-min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap.css.map" />
+    <Content Include="Vendor\Styles\Bootstrap\bootstrap.min.css.map" />
+    <Content Include="Vendor\Styles\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Vendor\Styles\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Vendor\Styles\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Vendor\Styles\Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
