@@ -10,15 +10,14 @@ namespace Sonar.Web.Controllers
     public class HomeAPIController : ApiController
     {
         [HttpGet]
-        public List<Model.Town> dohvatiSveGradove()
+        public IEnumerable<TownVM> dohvatiSveGradove()
         {
-            Model.hackathon_shift_2016_testEntities context = new Model.hackathon_shift_2016_testEntities();
-
-            List<Model.Town> listaGradova = new List<Model.Town>();
-            var nesto = context.Town.Select(town => town);
-            listaGradova.AddRange(nesto.ToList());
-
-            return listaGradova;
+            var context = new Model.hackathon_shift_2016_testEntities();
+            
+            return context.Town.Select(town => new TownVM() {
+                Name = town.Name,
+                Id = town.Id
+            });
         }
 
         [HttpGet]
@@ -32,5 +31,10 @@ namespace Sonar.Web.Controllers
 
             return l;
         }
+    }
+
+    public class TownVM {
+        public string Name;
+        public int Id;
     }
 }
