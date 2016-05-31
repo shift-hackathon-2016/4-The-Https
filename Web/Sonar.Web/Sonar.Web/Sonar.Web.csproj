@@ -164,13 +164,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\EventsApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeAPIController.cs" />
+    <Compile Include="API\HomeAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\Components\googleMap.html" />
+    <Content Include="AngularApp\Components\popup.js" />
     <Content Include="AngularApp\config.js" />
     <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
     <Content Include="AngularApp\Pages\EventNear\EventNearController.js" />
@@ -255,6 +258,10 @@
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Style\font-awesome.css" />
+    <Content Include="Style\font-awesome.min.css" />
+    <Content Include="Style\form-elements.css" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -275,6 +282,7 @@
     <Content Include="Vendor\Scripts\Angular\AngularJS-Toaster\toaster.min.js" />
     <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.js" />
     <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.min.js" />
+    <Content Include="Vendor\Scripts\Angular\ui-bootstrap-tpls-1.3.3.min.js" />
     <Content Include="Vendor\Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Vendor\Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Vendor\Scripts\jQuery\jquery-2.2.2.js" />
@@ -312,7 +320,6 @@
     <Content Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
