@@ -6,10 +6,14 @@
         <h1 style="color:#8dc640; padding-right:20%; padding-left:20%"> Sonar</h1>
         <br>
         <p class="lead" style=" text-align: justify; padding-left:20%; padding-right:20%">
-            <br>
+            </br>
 
             Sonar is event based platform where you can meat people with similar interests 
         </p>
     </div>
 </header>
+<<<<<<< HEAD
+<img src="../../../Images/Objasnjenje.PNG" style="padding-left:20%; width:1024px"/>
+=======
 <img src="../../../Images/Objasnjenje.PNG" style="padding-left: 20%; width: 45%;"/>
+>>>>>>> afa11d8731656ab0a0b42980488ab35e43e6d6da

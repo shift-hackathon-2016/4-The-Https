@@ -257,6 +257,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
     <Content Include="Style\font-awesome.css" />
     <Content Include="Style\font-awesome.min.css" />
     <Content Include="Style\form-elements.css" />
