@@ -1,10 +1,13 @@
-﻿MainController.$inject = ["$scope", "$http"];
-function MainController($scope, $http) {
+﻿MainController.$inject = ["$rootScope", "$scope", "$http"];
+function MainController($rootScope, $scope, $http) {
 
-    $scope.showModal = false;
-    $scope.toggleModal = function () {
-        $scope.showModal = !$scope.showModal;
+    $scope.visibilityOptions = {
+        isModalVisible: false
     };
+
+    $rootScope.$on('viewEventModalClosed', function() {
+        $scope.visibilityOptions.isModalVisible = false;
+    });
 
     $scope.mockEvents = [
         { id: 1, title: 'First event', lat: -34.397, long: 150.644 },

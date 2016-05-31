@@ -234,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\Components\googleMap.html" />
     <Content Include="AngularApp\Components\popup.js" />
     <Content Include="AngularApp\config.js" />
     <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
@@ -314,7 +315,6 @@
     <Content Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
