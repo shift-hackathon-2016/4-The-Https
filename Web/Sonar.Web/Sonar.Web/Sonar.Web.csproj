@@ -273,6 +273,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Style\font-awesome.css" />
+    <Content Include="Style\font-awesome.min.css" />
+    <Content Include="Style\form-elements.css" />
     <Content Include="Style\Style.css" />
     <Content Include="Vendor\Scripts\Angular\angular.js" />
     <Content Include="Vendor\Scripts\Angular\angular.min.js" />

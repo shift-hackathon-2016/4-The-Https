@@ -18,6 +18,7 @@ namespace Sonar.Web.Model
         public EventType()
         {
             this.Event = new HashSet<Event>();
+            this.EventSubscription = new HashSet<EventSubscription>();
         }
     
         public int Id { get; set; }
@@ -25,5 +26,7 @@ namespace Sonar.Web.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Event> Event { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EventSubscription> EventSubscription { get; set; }
     }
 }
