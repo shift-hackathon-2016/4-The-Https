@@ -10,12 +10,12 @@ namespace Sonar.ViewModels
         public string Name;
         public string Description;
         public string AuthorName;
-        public DateTime StartDate;
-        public DateTime EndDate;
+        public DateTime? StartDate;
+        public DateTime? EndDate;
         public string Town;
-        public string TownId;
+        public int TownId;
         public string State;
-        public string StateId;
+        public int StateId;
         public string UrlSlike;
         public string ContactNumber;
         public string EventType;
