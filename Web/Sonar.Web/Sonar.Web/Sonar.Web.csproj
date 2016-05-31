@@ -255,9 +255,6 @@
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
-    <Content Include="Style\font-awesome.css" />
-    <Content Include="Style\font-awesome.min.css" />
-    <Content Include="Style\form-elements.css" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -268,6 +265,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Style\font-awesome.css" />
+    <Content Include="Style\font-awesome.min.css" />
+    <Content Include="Style\form-elements.css" />
     <Content Include="Style\Style.css" />
     <Content Include="Vendor\Scripts\Angular\angular.js" />
     <Content Include="Vendor\Scripts\Angular\angular.min.js" />

@@ -19,7 +19,7 @@ namespace Sonar.Web.Model
         public int EventTypeID { get; set; }
         public int TownID { get; set; }
     
-        public virtual Event Event { get; set; }
+        public virtual EventType EventType { get; set; }
         public virtual Person Person { get; set; }
         public virtual Town Town { get; set; }
     }

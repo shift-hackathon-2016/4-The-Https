@@ -19,7 +19,6 @@ namespace Sonar.Web.Model
         {
             this.Comment = new HashSet<Comment>();
             this.EventPerson = new HashSet<EventPerson>();
-            this.EventSubscription = new HashSet<EventSubscription>();
         }
     
         public int Id { get; set; }
@@ -45,7 +44,5 @@ namespace Sonar.Web.Model
         public virtual Town Town { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EventPerson> EventPerson { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EventSubscription> EventSubscription { get; set; }
     }
 }
