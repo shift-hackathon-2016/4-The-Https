@@ -21,5 +21,23 @@ namespace Sonar.Web.Mappers
                 ImageUrl = person.ImageUrl
             };
         }
+
+        public static Model.Person Map(PersonVM person)
+        {
+            return new Model.Person()
+            {
+                Id = person.Id,
+                Username = person.Username,
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                Email = person.Email,
+                BirthDate = person.BirthDate,
+                Password = person.Password,
+                Rating = person.Rating,
+                PersonTypeID = int.Parse(person.PersonTypeId),
+                ImageUrl = person.ImageUrl
+                //PersonType=person.PersonType
+            };
+        }
     }
 }
