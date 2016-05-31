@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Http;
 using Sonar.ViewModels;
@@ -27,16 +29,22 @@ namespace Sonar.Web.Controllers
             });
         }
 
+        [HttpPost]
         public EventVM CreateEvent(EventVM eventVM)
         {
-            var mappedEvent = new Event()
+            var mappedEvent = new Event
             {
                 Name = eventVM.Name,
+                EventTypeID = (int) eventVM.EventType,
                 Description = eventVM.Description,
                 Longitude = eventVM.Longitude,
                 Latitude = eventVM.Latitude,
-                //TODO: mocked data, fix with real user data
-                AuthorID = 1
+                //TODO: hardcoded, fake and incorrect data
+                AuthorID = 14,
+                StartDate = DateTime.Now,
+                TownID = 1,
+                StateID = 1,
+                EndDate = DateTime.Now
             };
 
             context.Event.Add(mappedEvent);
@@ -45,14 +53,5 @@ namespace Sonar.Web.Controllers
 
             return eventVM;
         }
-    }
-
-    public class EventDto
-    {
-        public float? Longitude;
-        public float? Latitude;
-        public string Name;
-        public string Description;
-        public string AuthorName;
     }
 }
