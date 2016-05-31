@@ -20,8 +20,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="StartDate" Type="datetime2" Precision="7" />
           <Property Name="EndDate" Type="datetime2" Precision="7" />
           <Property Name="Longitude" Type="real" />
@@ -29,8 +29,8 @@
           <Property Name="AuthorID" Type="int" Nullable="false" />
           <Property Name="TownID" Type="int" Nullable="false" />
           <Property Name="StateID" Type="int" Nullable="false" />
-          <Property Name="ImageUrl" Type="nchar" MaxLength="50" />
-          <Property Name="Contact" Type="nchar" MaxLength="50" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
           <Property Name="EventTypeID" Type="int" Nullable="false" />
           <Property Name="Radius" Type="int" />
         </EntityType>
@@ -47,7 +47,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="EventSubscription">
           <Key>
@@ -63,22 +63,22 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="BirthDate" Type="date" />
-          <Property Name="Username" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Rating" Type="int" Nullable="false" />
           <Property Name="PersonTypeID" Type="int" Nullable="false" />
-          <Property Name="ImageUrl" Type="nchar" MaxLength="50" />
-          <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PersonSubscription">
           <Key>
@@ -93,7 +93,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="SotialNetwork">
           <Key>
@@ -101,14 +101,14 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="ProfileLink" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProfileLink" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="Town">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="Comment_EventID_FK">
           <End Role="Event" Type="Self.Event" Multiplicity="1" />
@@ -207,10 +207,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EventSubscription_EventTypeID_FK">
-          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
           <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Event">
+            <Principal Role="EventType">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="EventSubscription">
@@ -335,7 +335,7 @@
             <End Role="EventPerson" EntitySet="EventPerson" />
           </AssociationSet>
           <AssociationSet Name="EventSubscription_EventTypeID_FK" Association="Self.EventSubscription_EventTypeID_FK">
-            <End Role="Event" EntitySet="Event" />
+            <End Role="EventType" EntitySet="EventType" />
             <End Role="EventSubscription" EntitySet="EventSubscription" />
           </AssociationSet>
           <AssociationSet Name="EventSubscription_PersonID_FK" Association="Self.EventSubscription_PersonID_FK">
@@ -385,8 +385,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Precision="7" />
           <Property Name="EndDate" Type="DateTime" Precision="7" />
           <Property Name="Longitude" Type="Single" />
@@ -394,8 +394,8 @@
           <Property Name="AuthorID" Type="Int32" Nullable="false" />
           <Property Name="TownID" Type="Int32" Nullable="false" />
           <Property Name="StateID" Type="Int32" Nullable="false" />
-          <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EventTypeID" Type="Int32" Nullable="false" />
           <Property Name="Radius" Type="Int32" />
           <NavigationProperty Name="Comment" Relationship="Self.Comment_EventID_FK" FromRole="Event" ToRole="Comment" />
@@ -404,7 +404,6 @@
           <NavigationProperty Name="EventState" Relationship="Self.Event_StateID_FK" FromRole="Event" ToRole="EventState" />
           <NavigationProperty Name="Town" Relationship="Self.Event_TownID_FK" FromRole="Event" ToRole="Town" />
           <NavigationProperty Name="EventPerson" Relationship="Self.EventPerson_EventID_FK" FromRole="Event" ToRole="EventPerson" />
-          <NavigationProperty Name="EventSubscription" Relationship="Self.EventSubscription_EventTypeID_FK" FromRole="Event" ToRole="EventSubscription" />
         </EntityType>
         <EntityType Name="EventPerson">
           <Key>
@@ -421,7 +420,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Event" Relationship="Self.Event_StateID_FK" FromRole="EventState" ToRole="Event" />
         </EntityType>
         <EntityType Name="EventSubscription">
@@ -432,7 +431,7 @@
           <Property Name="PersonID" Type="Int32" Nullable="false" />
           <Property Name="EventTypeID" Type="Int32" Nullable="false" />
           <Property Name="TownID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Event" Relationship="Self.EventSubscription_EventTypeID_FK" FromRole="EventSubscription" ToRole="Event" />
+          <NavigationProperty Name="EventType" Relationship="Self.EventSubscription_EventTypeID_FK" FromRole="EventSubscription" ToRole="EventType" />
           <NavigationProperty Name="Person" Relationship="Self.EventSubscription_PersonID_FK" FromRole="EventSubscription" ToRole="Person" />
           <NavigationProperty Name="Town" Relationship="Self.EventSubscription_TownID_FK" FromRole="EventSubscription" ToRole="Town" />
         </EntityType>
@@ -441,23 +440,24 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Event" Relationship="Self.Event_EventTypeID_FK" FromRole="EventType" ToRole="Event" />
+          <NavigationProperty Name="EventSubscription" Relationship="Self.EventSubscription_EventTypeID_FK" FromRole="EventType" ToRole="EventSubscription" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BirthDate" Type="DateTime" Precision="0" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Rating" Type="Int32" Nullable="false" />
           <Property Name="PersonTypeID" Type="Int32" Nullable="false" />
-          <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Comment" Relationship="Self.Comment_PersonID_FK" FromRole="Person" ToRole="Comment" />
           <NavigationProperty Name="Event" Relationship="Self.Event_AuthorID_FK" FromRole="Person" ToRole="Event" />
           <NavigationProperty Name="EventPerson" Relationship="Self.EventPerson_PersonID_FK" FromRole="Person" ToRole="EventPerson" />
@@ -482,7 +482,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Person" Relationship="Self.Person_PersonTypeID_FK" FromRole="PersonType" ToRole="Person" />
         </EntityType>
         <EntityType Name="SotialNetwork">
@@ -491,7 +491,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PersonID" Type="Int32" Nullable="false" />
-          <Property Name="ProfileLink" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ProfileLink" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Person" Relationship="Self.SotialNetwork_PersonID_FK" FromRole="SotialNetwork" ToRole="Person" />
         </EntityType>
         <EntityType Name="Town">
@@ -499,7 +499,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Event" Relationship="Self.Event_TownID_FK" FromRole="Town" ToRole="Event" />
           <NavigationProperty Name="EventSubscription" Relationship="Self.EventSubscription_TownID_FK" FromRole="Town" ToRole="EventSubscription" />
         </EntityType>
@@ -587,18 +587,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="EventSubscription_EventTypeID_FK">
-          <End Role="Event" Type="Self.Event" Multiplicity="1" />
-          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Event">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EventSubscription">
-              <PropertyRef Name="EventTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="EventPerson_PersonID_FK">
           <End Role="Person" Type="Self.Person" Multiplicity="1" />
           <End Role="EventPerson" Type="Self.EventPerson" Multiplicity="*" />
@@ -608,6 +596,18 @@
             </Principal>
             <Dependent Role="EventPerson">
               <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_EventTypeID_FK">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="EventTypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -723,13 +723,13 @@
             <End Role="Event" EntitySet="Event" />
             <End Role="EventPerson" EntitySet="EventPerson" />
           </AssociationSet>
-          <AssociationSet Name="EventSubscription_EventTypeID_FK" Association="Self.EventSubscription_EventTypeID_FK">
-            <End Role="Event" EntitySet="Event" />
-            <End Role="EventSubscription" EntitySet="EventSubscription" />
-          </AssociationSet>
           <AssociationSet Name="EventPerson_PersonID_FK" Association="Self.EventPerson_PersonID_FK">
             <End Role="Person" EntitySet="Person" />
             <End Role="EventPerson" EntitySet="EventPerson" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_EventTypeID_FK" Association="Self.EventSubscription_EventTypeID_FK">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
           </AssociationSet>
           <AssociationSet Name="EventSubscription_PersonID_FK" Association="Self.EventSubscription_PersonID_FK">
             <End Role="Person" EntitySet="Person" />

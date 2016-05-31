@@ -1,6 +1,7 @@
 ﻿var apiKey = "AIzaSyDFN-6n_8rTK7x2sgRmONkTd7STu3yJpew";
 var googleMap = null;
 var currentMarkers = [];
+var DEFAULT_ZOOM = 13;
 
 mapDirective.$inject = [];
 function mapDirective() {
@@ -44,16 +45,31 @@ function addMarkerToMap(marker) {
 }
 
 function mapLink(scope, element, attrs) {
-	var element = document.getElementById('googleMap');
+    var element = document.getElementById('googleMap');
+
 	googleMap = new google.maps.Map(element, {
-		zoom: 9,
-		center: new google.maps.LatLng(-34.397, 150.644)
+		zoom: DEFAULT_ZOOM
 	});
+
+	getCurrentLocationAndCenter();
 
 	googleMap.addListener("click", function (event) {
 	    scope.visibilityOptions.isAddEventModalVisible = true;
 	    scope.$apply();
 	});
+}
+
+function getCurrentLocationAndCenter() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        googleMap.setCenter(pos);
+        googleMap.setZoom(DEFAULT_ZOOM);
+    }, function () {
+        alert('geolocation disabled');
+    });
 }
 
 sonar.directive('googleMap', mapDirective);
