@@ -44,16 +44,29 @@ function addMarkerToMap(marker) {
 }
 
 function mapLink(scope, element, attrs) {
-	var element = document.getElementById('googleMap');
+    var element = document.getElementById('googleMap');
+    var currentLocation = getCurrentLocation();
 	googleMap = new google.maps.Map(element, {
 		zoom: 9,
-		center: new google.maps.LatLng(-34.397, 150.644)
+		center: currentLocation
 	});
 
 	googleMap.addListener("click", function (event) {
 	    scope.visibilityOptions.isAddEventModalVisible = true;
 	    scope.$apply();
 	});
+}
+
+function getCurrentLocation() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        googleMap.setCenter(pos);
+    }, function () {
+        alert('geolocation disabled');
+    });
 }
 
 sonar.directive('googleMap', mapDirective);
