@@ -1,39 +1,26 @@
 ﻿
     <div style="float:left; margin-left:20%">
-        <table class="CSSTableGenerator" id="tblcollections" style="border:2px;border-color:black;">
-            <thead>
-                <tr>
-                    <th>Photo</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>User Name</th>
-                    <th>Birthday</th>
+        <ul>
+            <li>dsadsa          </li>
+            <li>sadsdsad</li>
+        </ul>
+        <ul>
+            <li>dsadsa          </li>
+            <li>sadsdsad</li>
+        </ul>
 
-                </tr>
-            </thead>
-            <span>
-                <a href="#!/Kreiraj/New/" class="thumb">Novi</a>
-            </span>
-            <tbody ng-repeat="muz in TablicaHitovas |filter:searchsve | limitTo:pageSize ">
-                <tr ng-click="get(muz)">
-                    <td>
-                        <a href="#!/Index/{{muz.Id}}" class="thumb">
-                        </a>
-                        <a href="#!/Index/{{muz.Id}}">{{muz.Id}}</a>
-                    </td>
-                    <td> <span ng-model="Imezapret">{{muz.Ime}}</span></td>
-                    <td> <span>{{muz.Prezime}}</span></td>
-                    <td> <span>{{muz.Adresa}}</span></td>
-                    <td> <span>{{muz.PostanskiBr}}</span></td>
-                    <td> <span>{{muz.Grad}}</span></td>
-                    <td> <span>{{muz.Drzava}}</span></td>
-                    <td> <span>{{muz.Email}}</span></td>
-                    <td> <span><a href="#!/Index/Edit/{{muz.Id}}" class="thumb">Edit</a></span></td>
-                    <td> <span><a href="#!/Index/Delete/{{muz.Id}}" class="thumb">Delete</a></span></td>
-                    <td> <input type="checkbox" ng-model="muz.id" /></td>
-                </tr>
+        <ul ng-repeat="muz in TablicaHitovas |filter:searchsve | limitTo:pageSize ">
 
-            </tbody>
-        </table>
+            <li> <span ng-model="Imezapret">{{muz.Ime}}</span></li>
+            <li> <span> hallo{{muz.Prezime}}</span></li>
+            <li> <span>sdasd{{muz.Adresa}}</span></li>
+            <li> <span>{{muz.PostanskiBr}}</span></li>
+            <li> <span>{{muz.Grad}}</span></li>
+            <li> <span>{{muz.Drzava}}</span></li>
+            <li> <span>{{muz.Email}}</span></li>
+            <li> <span><a href="#!/Index/Edit/{{muz.Id}}" class="thumb">Edit</a></span></li>
+            <li> <span><a href="#!/Index/Delete/{{muz.Id}}" class="thumb">Delete</a></span></li>
+            <li> <input type="checkbox" ng-model="muz.id" /></li>
+        </ul>
 
     </div>
