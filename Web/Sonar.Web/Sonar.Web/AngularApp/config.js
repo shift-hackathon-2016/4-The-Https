@@ -4,14 +4,14 @@
     function config($routeProvider) {
 
         $routeProvider
-         .when('/', new AngularPage('index'))
+         .when('/', new AngularPage('main'))
          .when('/login', new AngularPage('login'))
           .when('/profile', new AngularPage('profile'))
-          .when('/friends', new AngularPage('Friends'))
-          .when('/events', new AngularPage('Events'))
-          .when('/main', new AngularPage('Main'))
-            .when('/eventNear', new AngularPage('EventNear'))
-            .when('/newEvent', new AngularPage('NewEvent'))
+          .when('/friends', new AngularPage('friends'))
+          .when('/events', new AngularPage('events'))
+          .when('/index', new AngularPage('index'))
+          .when('/eventNear', new AngularPage('eventNear'))
+          .when('/newEvent', new AngularPage('newEvent'))
          .otherwise({ redirectTo: '/' });
     }
 
@@ -22,6 +22,3 @@
 
     app.config(config);
 })(angular, sonar);
-
-
-

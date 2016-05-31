@@ -3,4 +3,4 @@ function EventNearController($scope, $http) {
 
 }
 
-sonar.controller('EventNearController', EventNearController);
+sonar.controller('eventNearController', EventNearController);
