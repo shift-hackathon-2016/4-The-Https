@@ -34,7 +34,7 @@ namespace Sonar.Web.API
                 StateId = e.StateID,
                 UrlSlike = e.ImageUrl,
                 ContactNumber = e.Contact,
-                EventTypeName = e.EventType.Name,
+                EventType = e.EventType.Name,
                 EventTypeID = e.EventTypeID
             });
         }
@@ -45,7 +45,7 @@ namespace Sonar.Web.API
             var mappedEvent = new Event
             {
                 Name = eventVM.Name,
-                EventTypeID = (int) eventVM.EventType,
+                EventTypeID = eventVM.EventTypeID,
                 Description = eventVM.Description,
                 Longitude = eventVM.Longitude,
                 Latitude = eventVM.Latitude,

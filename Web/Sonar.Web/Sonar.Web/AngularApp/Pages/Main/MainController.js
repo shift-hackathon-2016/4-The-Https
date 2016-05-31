@@ -5,7 +5,7 @@ function MainController($rootScope, $scope, $http) {
     $scope.currentlySelectedLocation = {};
 
     $scope.isAddNewEventButtonDisabled = function () {
-        return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventType;
+        return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventTypeId;
     };
 
     $scope.visibilityOptions = {

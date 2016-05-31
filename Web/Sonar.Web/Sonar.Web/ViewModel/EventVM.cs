@@ -19,9 +19,8 @@ namespace Sonar.ViewModels
         public int StateId;
         public string UrlSlike;
         public string ContactNumber;
-        public string EventTypeName;
+        public string EventType;
         public int EventTypeID;
-        public EventType EventType;
     }
 
     public enum EventType
