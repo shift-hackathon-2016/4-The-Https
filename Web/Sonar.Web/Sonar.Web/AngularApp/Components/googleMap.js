@@ -33,12 +33,15 @@ function mapController($scope) {
 }
 
 function addMarkerToMap(marker) {
-    var position = new google.maps.LatLng(marker.lat, marker.long);
+    var position = new google.maps.LatLng(marker.Latitude, marker.Longitude);
     var newMarker = new google.maps.Marker({
         position: position,
         map: googleMap,
-        title: marker.title
+        title: marker.Name
     });
+
+    newMarker.description = marker.Description;
+    newMarker.authorName = marker.AuthorName;
 
     currentMarkers.push(newMarker);
     return newMarker;
