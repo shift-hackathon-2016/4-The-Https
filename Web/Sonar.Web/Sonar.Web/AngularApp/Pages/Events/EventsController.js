@@ -1,6 +1,6 @@
-﻿EventsController.$inject = ["$scope", "$http"];
-function EventsController($scope, $http) {
-    $http.get('api/Eventsapi/GetAllEventsForUser').then(function (response) {
+﻿EventsController.$inject = ["$rootScope","$scope", "$http"];
+function EventsController($rootScope,$scope, $http) {
+    $http.get('api/eventsApi/GetAllEventsForUser').then(function (response) {
         $scope.events = response.data;
         console.log(response);
     });
