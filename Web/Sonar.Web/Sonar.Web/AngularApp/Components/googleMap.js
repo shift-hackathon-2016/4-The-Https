@@ -8,8 +8,9 @@ function mapDirective() {
 	return {
 		scope: {
 		    events: "=",
+            visibilityOptions: "="
 		},
-		template: '<div id="googleMap"></div>',
+		templateUrl: 'AngularApp/Components/googleMap.html',
 		controller: mapController,
 		link: mapLink
 	};
@@ -19,7 +20,14 @@ mapController.$inject = ['$scope'];
 function mapController($scope) {
     $scope.$watch('events', function (val) {
         currentMarkers = [];
-        _($scope.events).each(addMarkerToMap);
+        _($scope.events).each(function(event) {
+            var marker = addMarkerToMap(event);
+
+            marker.addListener('click', function () {
+                $scope.visibilityOptions.isModalVisible = true;
+                $scope.$apply();
+            });
+        });
     });
 }
 
@@ -31,11 +39,8 @@ function addMarkerToMap(marker) {
         title: marker.title
     });
 
-    newMarker.addListener('click', function () {
-        alert('raise popup')
-    });
-
     currentMarkers.push(newMarker);
+    return newMarker;
 }
 
 function mapLink(scope, element, attrs) {

@@ -234,6 +234,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\Components\googleMap.html" />
+    <Content Include="AngularApp\Components\popup.js" />
     <Content Include="AngularApp\config.js" />
     <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
     <Content Include="AngularApp\Pages\EventNear\EventNearController.js" />
@@ -276,6 +278,7 @@
     <Content Include="Vendor\Scripts\Angular\AngularJS-Toaster\toaster.min.js" />
     <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.js" />
     <Content Include="Vendor\Scripts\Angular\AngularRoute\angular-route.min.js" />
+    <Content Include="Vendor\Scripts\Angular\ui-bootstrap-tpls-1.3.3.min.js" />
     <Content Include="Vendor\Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Vendor\Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Vendor\Scripts\jQuery\jquery-2.2.2.js" />
@@ -313,7 +316,6 @@
     <Content Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
