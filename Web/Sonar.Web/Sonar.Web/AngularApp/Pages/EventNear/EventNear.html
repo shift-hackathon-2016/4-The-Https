@@ -1,5 +1,25 @@
 ﻿
+<style>
+    #map {
+        width: 500px;
+        height: 400px;
+        background-color: #CCC;
+    }
+</style>
+<script>
+    function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: { lat: 44.540, lng: -78.546 },
+            zoom: 8
+        });
+    }
+</script>
+<p>Events Near you </p>
 
-<p>Main page</p>
-<p>Do you want to search event or create new </p>
-<p>Create New <a href="#/main">New Event</a></p>
+
+<p>Search for event near your location</p>
+
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
