@@ -28,7 +28,7 @@ namespace Sonar.Web.Model
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<float> Longitude { get; set; }
-        public string Latitude { get; set; }
+        public Nullable<float> Latitude { get; set; }
         public int AuthorID { get; set; }
         public int TownID { get; set; }
         public int StateID { get; set; }

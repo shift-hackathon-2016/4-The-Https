@@ -25,7 +25,7 @@
           <Property Name="StartDate" Type="datetime2" Precision="7" />
           <Property Name="EndDate" Type="datetime2" Precision="7" />
           <Property Name="Longitude" Type="real" />
-          <Property Name="Latitude" Type="nchar" MaxLength="10" />
+          <Property Name="Latitude" Type="real" />
           <Property Name="AuthorID" Type="int" Nullable="false" />
           <Property Name="TownID" Type="int" Nullable="false" />
           <Property Name="StateID" Type="int" Nullable="false" />
@@ -389,7 +389,7 @@
           <Property Name="StartDate" Type="DateTime" Precision="7" />
           <Property Name="EndDate" Type="DateTime" Precision="7" />
           <Property Name="Longitude" Type="Single" />
-          <Property Name="Latitude" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Latitude" Type="Single" />
           <Property Name="AuthorID" Type="Int32" Nullable="false" />
           <Property Name="TownID" Type="Int32" Nullable="false" />
           <Property Name="StateID" Type="Int32" Nullable="false" />
@@ -681,7 +681,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="hackathon_shift_2016_testEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="hackathon_shift_2016_testEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comment" EntityType="Self.Comment" />
           <EntitySet Name="Event" EntityType="Self.Event" />
           <EntitySet Name="EventPerson" EntityType="Self.EventPerson" />
@@ -759,7 +759,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="hackathon_shift_2016_testModelStoreContainer" CdmEntityContainer="hackathon_shift_2016_testEntities">
+        <EntityContainerMapping StorageEntityContainer="hackathon_shift_2016_testModelStoreContainer" CdmEntityContainer="hackathon_shift_2016_testEntities1">
           <EntitySetMapping Name="Comment">
             <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.Comment">
               <MappingFragment StoreEntitySet="Comment">

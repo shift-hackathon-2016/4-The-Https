@@ -8,7 +8,7 @@ namespace Sonar.Web.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "SEX", "TRUE" };
         }
 
         // GET api/values/5

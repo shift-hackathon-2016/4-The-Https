@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f055945a05f54bf19f97712ed5d1d67f" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="fc990c8f94b94cbcb2e8d1ba7fcf487c" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Comment" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Event" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventPerson" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventState" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventSubscription" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventType" Width="1.5" PointX="10.625" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventType" Width="1.5" PointX="6" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Person" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.PersonSubscription" Width="1.5" PointX="5.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.PersonSubscription" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="hackathon_shift_2016_testModel.PersonType" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.SotialNetwork" Width="1.5" PointX="1.125" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Town" Width="1.5" PointX="7.875" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.SotialNetwork" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Town" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="hackathon_shift_2016_testModel.Comment_EventID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="hackathon_shift_2016_testModel.Comment_PersonID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="hackathon_shift_2016_testModel.Event_AuthorID_FK" ManuallyRouted="false" />
