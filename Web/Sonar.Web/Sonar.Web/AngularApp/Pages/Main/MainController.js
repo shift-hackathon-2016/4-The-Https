@@ -2,12 +2,18 @@
 function MainController($rootScope, $scope, $http) {
 
     $scope.visibilityOptions = {
-        isModalVisible: false
+        isModalVisible: false,
+        isAddEventModalVisible: false
     };
 
-    $rootScope.$on('viewEventModalClosed', function() {
+    $rootScope.$on('eventModalClosed', function () {
         $scope.visibilityOptions.isModalVisible = false;
+        $scope.visibilityOptions.isAddEventModalVisible = false;
     });
+
+    $scope.submitEvent = function() {
+        throw Error('not implemented');
+    };
 
     $scope.mockEvents = [
         { id: 1, title: 'First event', lat: -34.397, long: 150.644 },
