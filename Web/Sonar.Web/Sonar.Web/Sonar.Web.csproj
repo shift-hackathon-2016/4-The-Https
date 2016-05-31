@@ -164,9 +164,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\EventsApiController - Copy.cs" />
-    <Compile Include="API\FriendsApiController.cs" />
     <Compile Include="API\EventsApiController.cs" />
+    <Compile Include="API\FriendsApiController.cs" />
     <Compile Include="API\LoginAPIController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
