@@ -9,7 +9,8 @@ function mapDirective() {
 	return {
 		scope: {
 		    events: "=",
-            visibilityOptions: "="
+		    visibilityOptions: "=",
+            location: "="
 		},
 		templateUrl: 'AngularApp/Components/googleMap.html',
 		controller: mapController,
@@ -57,6 +58,10 @@ function mapLink(scope, element, attrs) {
 	getCurrentLocationAndCenter();
 
 	googleMap.addListener("click", function (event) {
+	    scope.location = {
+	        lat: event.latLng.lat(),
+            lng: event.latLng.lng()
+	    };
 	    scope.visibilityOptions.isAddEventModalVisible = true;
 	    scope.$apply();
 	});
@@ -68,11 +73,22 @@ function getCurrentLocationAndCenter() {
             lat: position.coords.latitude,
             lng: position.coords.longitude
         };
+        var image = {
+            url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(20, 32),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(0, 32)
+        };
         googleMap.setCenter(pos);
-        googleMap.setZoom(DEFAULT_ZOOM);
+        new google.maps.Marker({ position: pos, map: googleMap, animation: google.maps.Animation.DROP,icon:image });
+        googleMap.setZoom(DEFAULT_ZOOM);(position.lat, position.lng);
     }, function () {
         alert('geolocation disabled');
     });
 }
+
 
 sonar.directive('googleMap', mapDirective);

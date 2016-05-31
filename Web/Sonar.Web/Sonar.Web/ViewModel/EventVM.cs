@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sonar.Web.Model;
+using System;
 
 namespace Sonar.ViewModels
 {
@@ -20,5 +21,16 @@ namespace Sonar.ViewModels
         public string Contact;
         public string EventType;
         public int EventTypeID;
+    }
+
+    public enum EventType
+    {
+        Neformalno = 1,
+        Rekreativno = 2,
+        Zabavno = 3,
+        Piknik = 4,
+        Edukativno = 5,
+        Kulturno = 6,
+        Ostalo = 7
     }
 }
