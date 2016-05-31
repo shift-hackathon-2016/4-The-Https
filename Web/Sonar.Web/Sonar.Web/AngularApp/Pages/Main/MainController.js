@@ -3,4 +3,4 @@ function MainController($scope, $http) {
 
 }
 
-sonar.controller('MainController', MainController);
+sonar.controller('mainController', MainController);

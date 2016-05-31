@@ -3,4 +3,4 @@ function ProfileController($scope, $http) {
 
 }
 
-sonar.controller('ProfileController', ProfileController);
+sonar.controller('profileController', ProfileController);

@@ -5,7 +5,7 @@
     @Scripts.Render("~/vendorScripts")
     @Scripts.Render("~/appScripts")
     @Styles.Render("~/vendorStyles")
-    <link href="Style/Style.css" rel="stylesheet">
+    <link href="Style/Style.css" rel="stylesheet" />
     <link href="~/Style/form-elements.css" rel="stylesheet" />
     <link href="~/Style/font-awesome.css" rel="stylesheet" />
     <link href="~/Style/font-awesome.min.css" rel="stylesheet" />
@@ -35,13 +35,13 @@
                     <li><a href="#/events">Your Events</a></li>
                     <li><a href="#/friends">Friends</a></li>
                     <li><a href="#/login">Login</a></li>
-                    <li><a href="#/main">Main</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-<div ng-view ></div>
+    <div ng-view></div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFN-6n_8rTK7x2sgRmONkTd7STu3yJpew&callback=angular.noop" async defer></script>
 </body>
 </html>
