@@ -9,6 +9,11 @@ namespace Sonar.ViewModels
         public string LastName;
         public int Rating;
         public string Username;
+        public string Password;
         public string Email;
+        public int Id;
+        public string PersonType;
+        public string PersonTypeId;
+
     }
 }
