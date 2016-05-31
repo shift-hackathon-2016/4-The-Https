@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Sonar.Web.Controllers
@@ -12,7 +9,7 @@ namespace Sonar.Web.Controllers
         [HttpGet]
         public List<Model.Town> dohvatiSveStringove()
         {
-            Model.hackathon_shift_2016_testEntities1 context = new Model.hackathon_shift_2016_testEntities1();
+            var context = new Model.hackathon_shift_2016_testEntities();
 
             List<Model.Town> listaGradova = new List<Model.Town>();
             var nesto = context.Town.Select(town => town);
