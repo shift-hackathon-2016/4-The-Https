@@ -255,13 +255,13 @@
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
+    <Content Include="Style\font-awesome.css" />
+    <Content Include="Style\font-awesome.min.css" />
+    <Content Include="Style\form-elements.css" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    <Content Include="Style\font-awesome.css" />
-    <Content Include="Style\font-awesome.min.css" />
-    <Content Include="Style\form-elements.css" />
     </Content>
     <Content Include="Model\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
