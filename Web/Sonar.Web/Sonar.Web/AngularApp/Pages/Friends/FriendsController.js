@@ -3,4 +3,4 @@ function FriendsController($scope, $http) {
 
 }
 
-sonar.controller('FriendsController', FriendsController);
+sonar.controller('friendsController', FriendsController);

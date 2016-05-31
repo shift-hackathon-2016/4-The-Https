@@ -3,4 +3,4 @@ function NewEventController($scope, $http) {
 
 }
 
-sonar.controller('NewEventController', NewEventController);
+sonar.controller('newEventController', NewEventController);

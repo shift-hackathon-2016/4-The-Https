@@ -78,6 +78,7 @@
           <Property Name="Rating" Type="int" Nullable="false" />
           <Property Name="PersonTypeID" Type="int" Nullable="false" />
           <Property Name="ImageUrl" Type="nchar" MaxLength="50" />
+          <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PersonSubscription">
           <Key>
@@ -456,6 +457,7 @@
           <Property Name="Rating" Type="Int32" Nullable="false" />
           <Property Name="PersonTypeID" Type="Int32" Nullable="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Comment" Relationship="Self.Comment_PersonID_FK" FromRole="Person" ToRole="Comment" />
           <NavigationProperty Name="Event" Relationship="Self.Event_AuthorID_FK" FromRole="Person" ToRole="Event" />
           <NavigationProperty Name="EventPerson" Relationship="Self.EventPerson_PersonID_FK" FromRole="Person" ToRole="EventPerson" />
@@ -681,7 +683,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="hackathon_shift_2016_testEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="hackathon_shift_2016_testEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comment" EntityType="Self.Comment" />
           <EntitySet Name="Event" EntityType="Self.Event" />
           <EntitySet Name="EventPerson" EntityType="Self.EventPerson" />
@@ -759,7 +761,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="hackathon_shift_2016_testModelStoreContainer" CdmEntityContainer="hackathon_shift_2016_testEntities1">
+        <EntityContainerMapping StorageEntityContainer="hackathon_shift_2016_testModelStoreContainer" CdmEntityContainer="hackathon_shift_2016_testEntities">
           <EntitySetMapping Name="Comment">
             <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.Comment">
               <MappingFragment StoreEntitySet="Comment">
@@ -838,6 +840,7 @@
                 <ScalarProperty Name="Rating" ColumnName="Rating" />
                 <ScalarProperty Name="PersonTypeID" ColumnName="PersonTypeID" />
                 <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
