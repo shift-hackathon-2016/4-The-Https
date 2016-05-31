@@ -9,7 +9,8 @@ function mapDirective() {
 	return {
 		scope: {
 		    events: "=",
-            visibilityOptions: "="
+		    visibilityOptions: "=",
+            location: "="
 		},
 		templateUrl: 'AngularApp/Components/googleMap.html',
 		controller: mapController,
@@ -57,6 +58,10 @@ function mapLink(scope, element, attrs) {
 	getCurrentLocationAndCenter();
 
 	googleMap.addListener("click", function (event) {
+	    scope.location = {
+	        lat: event.latLng.lat(),
+            lng: event.latLng.lng()
+	    };
 	    scope.visibilityOptions.isAddEventModalVisible = true;
 	    scope.$apply();
 	});

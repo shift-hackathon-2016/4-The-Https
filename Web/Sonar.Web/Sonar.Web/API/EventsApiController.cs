@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Http;
 using Sonar.ViewModels;
 using Sonar.Web.Model;
 
-namespace Sonar.Web.Controllers
+namespace Sonar.Web.API
 {
     public class EventsApiController : ApiController
     {
