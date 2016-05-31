@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Sonar.ViewModels;
 using Sonar.Web.Model;
 
 namespace Sonar.Web.Controllers
