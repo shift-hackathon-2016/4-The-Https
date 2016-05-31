@@ -8,11 +8,15 @@ namespace Sonar.Web.Controllers
 {
     public class EventsApiController : ApiController
     {
+        private readonly hackathon_shift_2016_testEntities context;
+        public EventsApiController()
+        {
+            context = new hackathon_shift_2016_testEntities();
+        }
+
         [HttpGet]
         public IEnumerable<EventVM> GetAllEventsForUser()
         {
-            var context = new hackathon_shift_2016_testEntities();
-
             return context.Event.Select(e => new EventVM()
             {
                 Longitude = e.Longitude,
@@ -22,7 +26,33 @@ namespace Sonar.Web.Controllers
                 AuthorName = e.Person.FirstName + " " + e.Person.LastName
             });
         }
+
+        public EventVM CreateEvent(EventVM eventVM)
+        {
+            var mappedEvent = new Event()
+            {
+                Name = eventVM.Name,
+                Description = eventVM.Description,
+                Longitude = eventVM.Longitude,
+                Latitude = eventVM.Latitude,
+                //TODO: mocked data, fix with real user data
+                AuthorID = 1
+            };
+
+            context.Event.Add(mappedEvent);
+            context.SaveChanges();
+            context.Dispose();
+
+            return eventVM;
+        }
     }
 
-
+    public class EventDto
+    {
+        public float? Longitude;
+        public float? Latitude;
+        public string Name;
+        public string Description;
+        public string AuthorName;
+    }
 }

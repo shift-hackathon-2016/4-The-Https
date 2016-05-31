@@ -164,15 +164,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="API\EventsApiController - Copy.cs" />
     <Compile Include="API\FriendsApiController.cs" />
+=======
+    <Compile Include="API\EventsApiController.cs" />
+    <Compile Include="API\LoginAPIController.cs" />
+>>>>>>> 19cdf8022e3aa98746eb14feffc2e1d9aa0894a1
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="API\HomeAPIController.cs" />
+    <Compile Include="API\TownApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,7 +238,11 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+<<<<<<< HEAD
     <Compile Include="ViewModel\PersonVM.cs" />
+=======
+    <Compile Include="ViewModel\TownVM.cs" />
+>>>>>>> 19cdf8022e3aa98746eb14feffc2e1d9aa0894a1
     <Compile Include="ViewModel\EventVM.cs" />
   </ItemGroup>
   <ItemGroup>
