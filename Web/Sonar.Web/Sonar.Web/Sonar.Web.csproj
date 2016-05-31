@@ -288,6 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="AngularApp\Components\googleMap.js" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
