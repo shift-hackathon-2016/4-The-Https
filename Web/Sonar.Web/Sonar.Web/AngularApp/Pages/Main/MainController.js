@@ -2,11 +2,13 @@
 function MainController($rootScope, $scope, $http) {
 
     $scope.visibilityOptions = {
-        isModalVisible: false
+        isModalVisible: false,
+        isAddEventModalVisible: false
     };
 
-    $rootScope.$on('viewEventModalClosed', function() {
+    $rootScope.$on('eventModalClosed', function () {
         $scope.visibilityOptions.isModalVisible = false;
+        $scope.visibilityOptions.isAddEventModalVisible = false;
     });
 
     $scope.mockEvents = [

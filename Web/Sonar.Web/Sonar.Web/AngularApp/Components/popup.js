@@ -39,7 +39,7 @@ sonar.directive('modal', function () {
             });
 
             $(element).on('hidden.bs.modal', function () {
-                scope.$emit('viewEventModalClosed');
+                scope.$emit('eventModalClosed');
                 scope.$apply(function () {
                     scope.$parent[attrs.visible] = false;
                 });

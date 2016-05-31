@@ -24,7 +24,7 @@ function mapController($scope) {
             var marker = addMarkerToMap(event);
 
             marker.addListener('click', function () {
-                $scope.visibilityOptions.isModalVisible = true;
+                $scope.visibilityOptions.isEventDetailsModalVisible = true;
                 $scope.$apply();
             });
         });
@@ -51,7 +51,8 @@ function mapLink(scope, element, attrs) {
 	});
 
 	googleMap.addListener("click", function (event) {
-	    alert('add new event');
+	    scope.visibilityOptions.isAddEventModalVisible = true;
+	    scope.$apply();
 	});
 }
 
