@@ -183,6 +183,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\config.js" />
+    <Content Include="AngularApp\Pages\Index\Index.html" />
+    <Content Include="AngularApp\Pages\Index\indexController.js" />
+    <Content Include="AngularApp\Pages\Login\login.html" />
+    <Content Include="AngularApp\Pages\Login\loginController.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Vendor\Scripts\Angular\angular.js" />
@@ -212,7 +218,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

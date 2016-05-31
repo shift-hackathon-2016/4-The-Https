@@ -3,11 +3,15 @@
 <head>
     <title>SONAR</title>
     @Scripts.Render("~/vendorScripts")
+    @Scripts.Render("~/appScripts")
     @Styles.Render("~/vendorStyles")
 </head>
-<body>
+<body ng-app="sonarApp">
 
-    <h1>TEST</h1>
+<a href="#/">INDEX</a>
+<a href="#/login">LOGIN</a>
+
+<div ng-view></div>
 
 </body>
 </html>

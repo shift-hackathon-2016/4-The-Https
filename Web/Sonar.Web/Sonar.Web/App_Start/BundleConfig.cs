@@ -6,6 +6,9 @@ namespace Sonar.Web
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/appScripts").IncludeDirectory(
+                "~/AngularApp", "*.js", true));
+
             bundles.Add(new ScriptBundle("~/vendorScripts").IncludeDirectory(
                     "~/Vendor/Scripts", "*.js", true));
 
