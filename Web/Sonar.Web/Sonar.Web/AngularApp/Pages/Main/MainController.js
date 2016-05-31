@@ -8,7 +8,7 @@ function MainController($rootScope, $scope, $http) {
     $scope.isAddNewEventButtonDisabled = function () {
         return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventTypeId;
     };
-
+    
     $scope.visibilityOptions = {
         isEventDetailsModalVisible: false,
         isAddEventModalVisible: false

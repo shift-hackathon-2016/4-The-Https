@@ -18,25 +18,26 @@ namespace Sonar.Web.API
         [HttpGet]
         public IEnumerable<EventVM> GetAllEventsForUser()
         {
-            return context.Event.Select(e => new EventVM()
+            var response = context.Event.Select(e => new EventVM()
             {
                 Longitude = e.Longitude,
                 Latitude = e.Latitude,
                 Name = e.Name,
                 Description = e.Description,
-                AuthorName = e.Person.FirstName + " " + e.Person.LastName,
+                Person = e.Person.FirstName + " " + e.Person.LastName,
                 Id = e.Id,
                 StartDate = e.StartDate,
                 EndDate = e.EndDate,
                 Town = e.Town.Name,
                 TownId = e.TownID,
-                State = e.EventState.Name,
+                EventState = e.EventState.Name,
                 StateId = e.StateID,
-                UrlSlike = e.ImageUrl,
-                ContactNumber = e.Contact,
+                ImageUrl = e.ImageUrl,
+                Contact= e.Contact,
                 EventType = e.EventType.Name,
                 EventTypeID = e.EventTypeID
             });
+            return response;
         }
 
         [HttpPost]
