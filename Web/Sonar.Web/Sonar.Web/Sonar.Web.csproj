@@ -185,6 +185,12 @@
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
     <Content Include="AngularApp\config.js" />
+    <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
+    <Content Include="AngularApp\Pages\EventNear\EventNearController.js" />
+    <Content Include="AngularApp\Pages\NewEvent\NewEvent.html" />
+    <Content Include="AngularApp\Pages\NewEvent\NewEventController.js" />
+    <Content Include="AngularApp\Pages\Main\Main.html" />
+    <Content Include="AngularApp\Pages\Main\MainController.js" />
     <Content Include="AngularApp\Pages\Friends\Friends.html" />
     <Content Include="AngularApp\Pages\Friends\FriendsController.js" />
     <Content Include="AngularApp\Pages\Index\Index.html" />
@@ -197,6 +203,8 @@
     <Content Include="AngularApp\Pages\Login\loginController.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Objasnjenje.PNG" />
     <Content Include="Style\Style.css" />
     <Content Include="Vendor\Scripts\Angular\angular.js" />
     <Content Include="Vendor\Scripts\Angular\angular.min.js" />

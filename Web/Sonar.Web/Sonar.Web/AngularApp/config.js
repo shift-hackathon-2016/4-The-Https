@@ -9,6 +9,9 @@
           .when('/profile', new AngularPage('profile'))
             .when('/friends', new AngularPage('Friends'))
             .when('/events', new AngularPage('Events'))
+            .when('/main', new AngularPage('Main'))
+            .when('/eventNear', new AngularPage('EventNear'))
+            .when('/newEvent', new AngularPage('NewEvent'))
          .otherwise({ redirectTo: '/' });
     }
 
