@@ -1,6 +1,7 @@
 ﻿var apiKey = "AIzaSyDFN-6n_8rTK7x2sgRmONkTd7STu3yJpew";
 var googleMap = null;
 var currentMarkers = [];
+var currentCircles = [];
 var DEFAULT_ZOOM = 13;
 
 mapDirective.$inject = [];
@@ -24,6 +25,8 @@ mapController.$inject = ['$scope'];
 function mapController($scope) {
     $scope.$watch('events', function (val) {
         currentMarkers = [];
+        _(currentCircles).each(function(circle) { circle.setMap(null) });
+
         _($scope.events).each(function(event) {
             var marker = addMarkerToMap(event);
 
@@ -50,20 +53,21 @@ function addMarkerToMap(marker) {
         map: googleMap,
         title: marker.Name
     });
-    var circle = new google.maps.Circle({
+
+    var radiusCircle = new google.maps.Circle({
         center: position,
         radius: marker.Radius,
         map: googleMap,
         fillOpacity: 0.2,
         strokeColor: '#FF0000',
         strokeOpacity:0.2,
-            fillColor: 'red'
-       
+        fillColor: 'red'
     });
 
     newMarker.description = marker.Description;
     newMarker.personName = marker.Person;
 
+    currentCircles.push(radiusCircle);
     currentMarkers.push(newMarker);
     return newMarker;
 }
