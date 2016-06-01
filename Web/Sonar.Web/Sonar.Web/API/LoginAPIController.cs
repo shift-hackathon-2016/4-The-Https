@@ -24,5 +24,25 @@ namespace Sonar.Web.API
 
             return useri.Any(user => user.Username == usr && user.Password == pwd);
         }
+
+        [HttpPost]
+        public int login2(string usr, string pwd)
+        {
+            var useri = context.Event.Select(e => new PersonVM()
+            {
+                Username = e.Person.Username,
+                Password = e.Person.Password,
+                Id = e.Person.Id
+            }).ToList();
+
+            foreach (var user in useri)
+            {
+                if (user.Username == usr && user.Password == pwd)
+                {
+                    return user.Id;
+                }
+            }
+            return -1;
+        }
     }
 }
