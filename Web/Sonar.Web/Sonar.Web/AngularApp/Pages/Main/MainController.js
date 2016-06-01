@@ -33,8 +33,8 @@ function MainController($rootScope, $scope, $http) {
 
     $scope.$watch('currentlySelectedLocation', function () {
         if ($scope.currentlySelectedLocation) {
-            $scope.newEvent.latitude = $scope.currentlySelectedLocation.lat;
-            $scope.newEvent.longitude = $scope.currentlySelectedLocation.lng;
+            $scope.newEvent.Latitude = $scope.currentlySelectedLocation.lat;
+            $scope.newEvent.Longitude = $scope.currentlySelectedLocation.lng;
         }
     }, true);
 
@@ -51,6 +51,11 @@ function MainController($rootScope, $scope, $http) {
         $http.get('api/eventsApi/GetAllEventsForUser').then(function (response) {
             $scope.events = response.data;
         });
+
+    }
+    function getDistance() {
+        $http.post('')
+
     }
 }
 
