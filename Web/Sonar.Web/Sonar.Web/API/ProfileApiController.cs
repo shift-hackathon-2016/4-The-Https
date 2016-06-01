@@ -12,10 +12,12 @@ namespace Sonar.Web.API
     public class ProfileApiController : ApiController
     {
         [HttpGet]
-        public PersonVM Get(int id = 14)
+        public PersonVM Get(int id)
         {
-            var context = new Model.hackathon_shift_2016_testEntities();
+            if (id == 0)
+                id = 14; //14 is currently logged in user
 
+            var context = new Model.hackathon_shift_2016_testEntities();
             var viewModel = PersonMapper.Map(context.Person.Single(person => person.Id == id));
 
             context.Dispose();
