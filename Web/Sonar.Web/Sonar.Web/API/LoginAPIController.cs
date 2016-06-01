@@ -1,10 +1,6 @@
 ﻿using Sonar.ViewModels;
 using Sonar.Web.Model;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Sonar.Web.API
@@ -26,14 +22,27 @@ namespace Sonar.Web.API
                 Password = e.Person.Password
             }).ToList();
 
-            foreach(var user in useri)
+            return useri.Any(user => user.Username == usr && user.Password == pwd);
+        }
+
+        [HttpPost]
+        public int login2(string usr, string pwd)
+        {
+            var useri = context.Event.Select(e => new PersonVM()
             {
-                if(user.Username == usr && user.Password == pwd)
+                Username = e.Person.Username,
+                Password = e.Person.Password,
+                Id = e.Person.Id
+            }).ToList();
+
+            foreach (var user in useri)
+            {
+                if (user.Username == usr && user.Password == pwd)
                 {
-                    return true;
+                    return user.Id;
                 }
             }
-            return false;
+            return -1;
         }
     }
 }

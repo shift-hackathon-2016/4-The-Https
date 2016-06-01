@@ -14,6 +14,5 @@ namespace Sonar.ViewModels
         public int Id;
         public string PersonType;
         public string PersonTypeId;
-
     }
 }

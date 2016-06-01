@@ -11,9 +11,10 @@ function mapDirective() {
 		    events: "=",
 		    visibilityOptions: "=",
 		    location: "=",
-            currentlySelectedEvent:"="
+		    currentlySelectedEvent: "=",
+            isEventsPage: "="
 		},
-		templateUrl: 'AngularApp/Components/googleMap.html',
+		templateUrl: 'AngularApp/Components/GoogleMap/googleMap.html',
 		controller: mapController,
 		link: mapLink
 	};
@@ -32,6 +33,12 @@ function mapController($scope) {
                 $scope.$apply();
             });
         });
+
+        if ($scope.events.length && $scope.isEventsPage) {
+            var firstEvent = $scope.events[0];
+            var position = new google.maps.LatLng(firstEvent.Latitude, firstEvent.Longitude);
+            googleMap.setCenter(position);
+        }
     });
 }
 
@@ -86,11 +93,10 @@ function getCurrentLocationAndCenter() {
         };
         googleMap.setCenter(pos);
         new google.maps.Marker({ position: pos, map: googleMap, animation: google.maps.Animation.DROP,icon:image });
-        googleMap.setZoom(DEFAULT_ZOOM);(position.lat, position.lng);
+        googleMap.setZoom(DEFAULT_ZOOM);
     }, function () {
         alert('geolocation disabled');
     });
 }
-
 
 sonar.directive('googleMap', mapDirective);

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
+using Sonar.Web.Model;
 
 namespace Sonar.Web.API
 {
     public class UserApiController : ApiController
     {
-
         [HttpGet]
-        public object dohvatiProfil(int id)
+        public Person dohvatiProfil(int id)
         {
             var context = new Model.hackathon_shift_2016_testEntities();
 

@@ -1,11 +1,4 @@
-﻿sonar.controller('MainCtrl', function ($scope) {
-    $scope.showModal = false;
-    $scope.toggleModal = function () {
-        $scope.showModal = !$scope.showModal;
-    };
-});
-
-sonar.directive('modal', function () {
+﻿sonar.directive('modal', function () {
     return {
         template: '<div class="modal fade">' +
             '<div class="modal-dialog">' +

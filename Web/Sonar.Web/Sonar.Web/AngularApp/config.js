@@ -7,6 +7,7 @@
          .when('/', new AngularPage('main'))
          .when('/login', new AngularPage('login'))
           .when('/profile', new AngularPage('profile'))
+          .when('/profile/:id', new AngularPage('profile'))
           .when('/friends', new AngularPage('friends'))
           .when('/events', new AngularPage('events'))
           .when('/index', new AngularPage('index'))

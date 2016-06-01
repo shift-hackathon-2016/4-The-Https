@@ -4,6 +4,18 @@ function MainController($rootScope, $scope, $http) {
     $scope.newEvent = {};
     $scope.currentlySelectedLocation = {};
     $scope.currentlySelectedEvent = {}
+    $scope.isUpdating = function (setValue) {
+        return (setValue == true) ? setValue : false;
+    }
+    $scope.updateEvent = function () {
+        $scope.isUpdating(true);
+
+        $http.post('api/eventsApi/Update/', $scope.currentlySelectedEvent).then(function () {
+            $scope.updateProfileMessage = "Successfully event  data...";
+            $scope.isUpdating(false);
+            $scope.visibilityOptions.isEventDetailsModalVisible = false;
+        });
+    }
 
     $scope.isAddNewEventButtonDisabled = function () {
         return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventTypeId;
@@ -21,8 +33,8 @@ function MainController($rootScope, $scope, $http) {
 
     $scope.$watch('currentlySelectedLocation', function () {
         if ($scope.currentlySelectedLocation) {
-            $scope.newEvent.latitude = $scope.currentlySelectedLocation.lat;
-            $scope.newEvent.longitude = $scope.currentlySelectedLocation.lng;
+            $scope.newEvent.Latitude = $scope.currentlySelectedLocation.lat;
+            $scope.newEvent.Longitude = $scope.currentlySelectedLocation.lng;
         }
     }, true);
 
@@ -39,6 +51,11 @@ function MainController($rootScope, $scope, $http) {
         $http.get('api/eventsApi/GetAllEventsForUser').then(function (response) {
             $scope.events = response.data;
         });
+
+    }
+    function getDistance() {
+        $http.post('')
+
     }
 }
 

@@ -12,10 +12,12 @@ namespace Sonar.Web.API
     public class ProfileApiController : ApiController
     {
         [HttpGet]
-        public PersonVM Get(int id = 14)
+        public PersonVM Get(int id)
         {
-            var context = new Model.hackathon_shift_2016_testEntities();
+            if (id == 0)
+                id = 14; //14 is currently logged in user
 
+            var context = new Model.hackathon_shift_2016_testEntities();
             var viewModel = PersonMapper.Map(context.Person.Single(person => person.Id == id));
 
             context.Dispose();
@@ -38,20 +40,21 @@ namespace Sonar.Web.API
         [HttpPost]
         public void Update(PersonVM personData)
         {
-            //var personData = (PersonVM)person;
-
             var dataModel = PersonMapper.Map(personData);
 
             using (var context = new Model.hackathon_shift_2016_testEntities())
             {
-                context.Person.Single(_person => _person.Id == dataModel.Id).Username = dataModel.Username;
-                context.Person.Single(_person => _person.Id == dataModel.Id).FirstName = dataModel.FirstName;
-                context.Person.Single(_person => _person.Id == dataModel.Id).LastName = dataModel.LastName;
-                context.Person.Single(_person => _person.Id == dataModel.Id).Password = dataModel.Password;
-                context.Person.Single(_person => _person.Id == dataModel.Id).BirthDate = dataModel.BirthDate;
-                context.Person.Single(_person => _person.Id == dataModel.Id).Rating = dataModel.Rating;
-                context.Person.Single(_person => _person.Id == dataModel.Id).Email = dataModel.Email;
-                context.Person.Single(_person => _person.Id == dataModel.Id).ImageUrl = dataModel.ImageUrl;
+                var personToUpdate = context.Person.Single(p => p.Id == dataModel.Id);
+
+                personToUpdate.Username = dataModel.Username;
+                personToUpdate.FirstName = dataModel.FirstName;
+                personToUpdate.LastName = dataModel.LastName;
+                personToUpdate.Password = dataModel.Password;
+                personToUpdate.BirthDate = dataModel.BirthDate;
+                personToUpdate.Rating = dataModel.Rating;
+                personToUpdate.Email = dataModel.Email;
+                personToUpdate.ImageUrl = dataModel.ImageUrl;
+
                 context.SaveChanges();
             }
         }
