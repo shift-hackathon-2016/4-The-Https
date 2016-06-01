@@ -14,7 +14,7 @@ function mapDirective() {
 		    currentlySelectedEvent: "=",
             isEventsPage: "="
 		},
-		templateUrl: 'AngularApp/Components/googleMap.html',
+		templateUrl: 'AngularApp/Components/GoogleMap/googleMap.html',
 		controller: mapController,
 		link: mapLink
 	};
@@ -98,6 +98,5 @@ function getCurrentLocationAndCenter() {
         alert('geolocation disabled');
     });
 }
-
 
 sonar.directive('googleMap', mapDirective);
