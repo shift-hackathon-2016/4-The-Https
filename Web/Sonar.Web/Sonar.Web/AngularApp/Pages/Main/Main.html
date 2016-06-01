@@ -44,11 +44,11 @@
         </div>
         <div class="form-group">
             <label class="sr-only" for="form-event-start-date">Start Date</label>
-            <input ng-model="currentlySelectedEvent.StartDate" type="text" name="EditEvent-start-date" placeholder="Event start date..." class="form-username form-control" id="Edit-event-start-date">
+            <input ng-model="currentlySelectedEvent.StartDate" type="date" name="EditEvent-start-date" placeholder="Event start date..." class="form-username form-control" id="Edit-event-start-date">
         </div>
         <div class="form-group">
             <label class="sr-only" for="form-event-end-date">End Date</label>
-            <input ng-model="currentlySelectedEvent.EndDate" type="text" name="EditEvent-end-date" placeholder="Event end date..." class="form-username form-control" id="Edit-event-end-date">
+            <input ng-model="currentlySelectedEvent.EndDate" type="date" name="EditEvent-end-date" placeholder="Event end date..." class="form-username form-control" id="Edit-event-end-date">
         </div>
         <button class="btn" ng-click="updateEvent()" >Change</button>
         </div>
@@ -84,11 +84,11 @@
         </div>
         <div class="form-group">
             <label class="sr-only" for="form-event-start-date">Start Date</label>
-            <input ng-model="newEvent.startDate" type="text" name="form-event-start-date" placeholder="Event start date..." class="form-username form-control" id="form-event-start-date">
+            <input ng-model="newEvent.startDate" type="date" name="form-event-start-date" placeholder="Event start date..." class="form-username form-control" id="form-event-start-date">
         </div>
         <div class="form-group">
             <label class="sr-only" for="form-event-end-date">End Date</label>
-            <input ng-model="newEvent.endDate" type="text" name="form-event-end-date" placeholder="Event end date..." class="form-username form-control" id="form-event-end-date">
+            <input ng-model="newEvent.endDate" type="date" name="form-event-end-date" placeholder="Event end date..." class="form-username form-control" id="form-event-end-date">
         </div>
         <button class="btn" ng-click="submitEvent()" ng-disabled="isAddNewEventButtonDisabled()">Add new event</button>
     </div>

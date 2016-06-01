@@ -19,7 +19,7 @@ namespace Sonar.Web.Mappers
                 EndDate = Event.EndDate,
                 Longitude = Event.Longitude,
                 Latitude = Event.Latitude,
-               
+                Radius=Event.Radius
             };
         }
 
