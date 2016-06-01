@@ -49,6 +49,16 @@ function addMarkerToMap(marker) {
         map: googleMap,
         title: marker.Name
     });
+    var circle = new google.maps.Circle({
+        center: position,
+        radius: marker.Radius,
+        map: googleMap,
+        fillOpacity: 0.2,
+        strokeColor: '#FF0000',
+        strokeOpacity:0.2,
+            fillColor: 'red'
+       
+    });
 
     newMarker.description = marker.Description;
     newMarker.personName = marker.Person;
