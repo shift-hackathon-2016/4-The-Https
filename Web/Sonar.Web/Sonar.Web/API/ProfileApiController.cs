@@ -25,6 +25,18 @@ namespace Sonar.Web.API
             return viewModel;
         }
 
+        [HttpGet]
+        public PersonVM GetByUsername(string username)
+        {
+            var context = new Model.hackathon_shift_2016_testEntities();
+
+            var viewModel = PersonMapper.Map(context.Person.Single(person => person.Username == username));
+
+            context.Dispose();
+
+            return viewModel;
+        }
+
         [HttpPost]
         public void Update(PersonVM personData)
         {
