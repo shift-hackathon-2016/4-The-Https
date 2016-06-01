@@ -10,6 +10,12 @@ namespace Sonar.Web.Controllers
 {
     public class FriendsApiController : ApiController
     {
+        [HttpPost]
+        public void AddFriend()
+        {
+
+        }
+
         [HttpGet]
         public IEnumerable<PersonVM> GetAllFriendsForUser(string username = "adonlic")
         {
