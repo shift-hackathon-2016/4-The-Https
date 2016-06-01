@@ -38,7 +38,8 @@ namespace Sonar.Web.API
                 ImageUrl = e.ImageUrl,
                 Contact= e.Contact,
                 EventType = e.EventType.Name,
-                EventTypeID = e.EventTypeID
+                EventTypeID = e.EventTypeID,
+                Radius=e.Radius
             });
             return response;
         }
