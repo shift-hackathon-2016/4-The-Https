@@ -246,6 +246,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\Components\Dropdown\dropdown.html" />
+    <Content Include="AngularApp\Components\Dropdown\dropdown.js" />
     <Content Include="AngularApp\Components\EventForm\eventForm.html" />
     <Content Include="AngularApp\Components\EventForm\eventForm.js" />
     <Content Include="AngularApp\Components\GoogleMap\googleMap.html" />
@@ -275,6 +277,7 @@
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
     <Content Include="Images\Izrezak.PNG" />
+    <Content Include="Images\logo.png" />
     <Content Include="Style\font-awesome.css" />
     <Content Include="Style\font-awesome.min.css" />
     <Content Include="Style\form-elements.css" />

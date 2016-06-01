@@ -18,7 +18,7 @@ function MainController($rootScope, $scope, $http) {
     }
 
     $scope.isAddNewEventButtonDisabled = function () {
-        return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventTypeId;
+        return !$scope.newEvent.Name || !$scope.newEvent.Description || !$scope.newEvent.EventTypeID;
     };
     
     $scope.visibilityOptions = {

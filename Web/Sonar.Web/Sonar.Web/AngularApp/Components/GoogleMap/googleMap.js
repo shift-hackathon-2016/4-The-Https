@@ -34,7 +34,7 @@ function mapController($scope) {
             });
         });
 
-        if ($scope.events.length && $scope.isEventsPage) {
+        if ($scope.events && $scope.events.length && $scope.isEventsPage) {
             var firstEvent = $scope.events[0];
             var position = new google.maps.LatLng(firstEvent.Latitude, firstEvent.Longitude);
             googleMap.setCenter(position);
@@ -57,7 +57,7 @@ function addMarkerToMap(marker) {
     return newMarker;
 }
 
-function mapLink(scope, element, attrs) {
+function mapLink(scope, _el, _attrs) {
     var element = document.getElementById('googleMap');
 
 	googleMap = new google.maps.Map(element, {
@@ -84,11 +84,8 @@ function getCurrentLocationAndCenter() {
         };
         var image = {
             url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-            // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(20, 32),
-            // The origin for this image is (0, 0).
             origin: new google.maps.Point(0, 0),
-            // The anchor for this image is the base of the flagpole at (0, 32).
             anchor: new google.maps.Point(0, 32)
         };
         googleMap.setCenter(pos);
