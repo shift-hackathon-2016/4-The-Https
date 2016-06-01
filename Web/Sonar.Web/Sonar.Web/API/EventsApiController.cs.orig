@@ -40,7 +40,10 @@ namespace Sonar.Web.API
                 EventType = e.EventType.Name,
                 EventTypeID = e.EventTypeID,
                 Radius = e.Radius
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 07ac2005a21cd2a9655d9bec9d558a48fdb8cfe6
             });
             return response;
         }

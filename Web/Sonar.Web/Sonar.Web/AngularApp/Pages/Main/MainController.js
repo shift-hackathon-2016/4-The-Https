@@ -51,6 +51,11 @@ function MainController($rootScope, $scope, $http) {
         $http.get('api/eventsApi/GetAllEventsForUser').then(function (response) {
             $scope.events = response.data;
         });
+
+    }
+    function getDistance() {
+        $http.post('')
+
     }
 }
 
