@@ -169,6 +169,7 @@
     <Compile Include="API\HelperApiController.cs" />
     <Compile Include="API\LoginAPIController.cs" />
     <Compile Include="API\ProfileApiController.cs" />
+    <Compile Include="API\UserApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -238,14 +239,19 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\EventPersonVM.cs" />
     <Compile Include="ViewModel\PersonVM.cs" />
     <Compile Include="ViewModel\TownVM.cs" />
     <Compile Include="ViewModel\EventVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
-    <Content Include="AngularApp\Components\googleMap.html" />
-    <Content Include="AngularApp\Components\popup.js" />
+    <Content Include="AngularApp\Components\EventForm\eventForm.html" />
+    <Content Include="AngularApp\Components\EventForm\eventForm.js" />
+    <Content Include="AngularApp\Components\GoogleMap\googleMap.html" />
+    <Content Include="AngularApp\Components\Popup\popup.js" />
+    <Content Include="AngularApp\Components\Sidebar\sidebar.html" />
+    <Content Include="AngularApp\Components\Sidebar\sidebar.js" />
     <Content Include="AngularApp\config.js" />
     <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
     <Content Include="AngularApp\Pages\EventNear\EventNearController.js" />
@@ -323,7 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="AngularApp\Components\googleMap.js" />
+    <Content Include="AngularApp\Components\GoogleMap\googleMap.js" />
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

@@ -1,6 +1,7 @@
 ﻿using Sonar.ViewModels;
 using Sonar.Web.Mappers;
 using Sonar.Web.Model;
+using Sonar.Web.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +86,50 @@ namespace Sonar.Web.API
                 EventTypeID = e.EventTypeID
             });
             return response;
+        }
+
+        [HttpGet]
+        public List<object> GetMyEvents(int idKorisnika)
+        {
+            var response1 = context.Event.Select(e => new EventVM()
+            {
+                Longitude = e.Longitude,
+                Latitude = e.Latitude,
+                Name = e.Name,
+                Description = e.Description,
+                Person = e.Person.FirstName + " " + e.Person.LastName,
+                Id = e.Id,
+                StartDate = e.StartDate,
+                EndDate = e.EndDate,
+                Town = e.Town.Name,
+                TownId = e.TownID,
+                EventState = e.EventState.Name,
+                StateId = e.StateID,
+                ImageUrl = e.ImageUrl,
+                Contact = e.Contact,
+                EventType = e.EventType.Name,
+                EventTypeID = e.EventTypeID
+            }).ToList();
+            var response2 = context.EventPerson.Select(e => new EventPersonVM()
+            {
+                Id = e.Id,
+                PersonId = e.Person.Id,
+                EventId = e.EventID
+            }).Where(o => o.PersonId == idKorisnika).ToList();
+
+            List<object> listaSubscriptiona = new List<object>();
+            foreach(var r1 in response1)
+            {
+                foreach(var r2 in response2)
+                {
+                    if(r1.Id == r2.EventId)
+                    {
+                        listaSubscriptiona.Add(r1);
+                    }
+                }
+            }
+
+            return listaSubscriptiona;
         }
 
         [HttpPost]
