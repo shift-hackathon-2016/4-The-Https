@@ -255,6 +255,7 @@
     <Content Include="AngularApp\Components\Sidebar\sidebar.html" />
     <Content Include="AngularApp\Components\Sidebar\sidebar.js" />
     <Content Include="AngularApp\config.js" />
+    <Content Include="AngularApp\Pages\HackathonCocaCola\HackathonCocaCola.html" />
     <Content Include="AngularApp\Pages\EventNear\EventNear.html" />
     <Content Include="AngularApp\Pages\EventNear\EventNearController.js" />
     <Content Include="AngularApp\Pages\NewEvent\NewEvent.html" />
@@ -276,6 +277,7 @@
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
+    <Content Include="Images\autodesk123D_hackathon.mp4" />
     <Content Include="Images\Izrezak.PNG" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Objasnjenje.PNG" />
@@ -296,6 +298,7 @@
     <Content Include="Style\font-awesome.min.css" />
     <Content Include="Style\form-elements.css" />
     <Content Include="Style\Style.css" />
+    <Content Include="Vendor\Scripts\ac_quicktime.js" />
     <Content Include="Vendor\Scripts\Angular\angular.js" />
     <Content Include="Vendor\Scripts\Angular\angular.min.js" />
     <Content Include="Vendor\Scripts\Angular\AngularJS-Toaster\toaster.js" />
@@ -345,6 +348,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\shiftCola.dwg" />
     <None Include="Properties\PublishProfiles\EventSonar - Web Deploy.pubxml" />
     <Content Include="Vendor\Scripts\Angular\angular.min.js.map" />
   </ItemGroup>

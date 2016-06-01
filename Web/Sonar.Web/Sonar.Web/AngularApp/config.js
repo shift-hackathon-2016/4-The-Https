@@ -13,6 +13,7 @@
           .when('/index', new AngularPage('index'))
           .when('/eventNear', new AngularPage('eventNear'))
           .when('/newEvent', new AngularPage('newEvent'))
+          .when('/hackathonCocaCola', new AngularPage('hackathonCocaCola'))
          .otherwise({ redirectTo: '/' });
     }
 
