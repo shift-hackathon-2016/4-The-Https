@@ -86,7 +86,7 @@ function getCurrentLocationAndCenter() {
         };
         googleMap.setCenter(pos);
         new google.maps.Marker({ position: pos, map: googleMap, animation: google.maps.Animation.DROP,icon:image });
-        googleMap.setZoom(DEFAULT_ZOOM);(position.lat, position.lng);
+        googleMap.setZoom(DEFAULT_ZOOM);
     }, function () {
         alert('geolocation disabled');
     });
