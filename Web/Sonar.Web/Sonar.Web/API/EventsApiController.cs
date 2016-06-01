@@ -36,9 +36,10 @@ namespace Sonar.Web.API
                 EventState = e.EventState.Name,
                 StateId = e.StateID,
                 ImageUrl = e.ImageUrl,
-                Contact= e.Contact,
+                Contact = e.Contact,
                 EventType = e.EventType.Name,
                 EventTypeID = e.EventTypeID,
+                Radius = e.Radius
                 Radius=e.Radius
             });
             return response;
@@ -46,21 +47,20 @@ namespace Sonar.Web.API
         [HttpPost]
         public void Update(EventVM eventData)
         {
-            //var personData = (PersonVM)person;
-
             var dataModel = EventMapper.Map(eventData);
+            var eventToUpdate = context.Event.Single(_event => _event.Id == dataModel.Id);
 
-            using (var context = new Model.hackathon_shift_2016_testEntities())
-            {
-                context.Event.Single(_event => _event.Id == dataModel.Id).Id = dataModel.Id;
-                context.Event.Single(_event => _event.Id == dataModel.Id).Name = dataModel.Name;
-                context.Event.Single(_event => _event.Id == dataModel.Id).Description = dataModel.Description;
-                context.Event.Single(_event => _event.Id == dataModel.Id).StartDate = dataModel.StartDate;
-                context.Event.Single(_event => _event.Id == dataModel.Id).EndDate = dataModel.EndDate;
-                context.Event.Single(_event => _event.Id == dataModel.Id).Longitude = dataModel.Longitude;
-                context.Event.Single(_event => _event.Id == dataModel.Id).Latitude = dataModel.Latitude;
-               context.SaveChanges();
-            }
+            eventToUpdate.Id = dataModel.Id;
+            eventToUpdate.Name = dataModel.Name;
+            eventToUpdate.Radius = dataModel.Radius;
+            eventToUpdate.Description = dataModel.Description;
+            eventToUpdate.StartDate = dataModel.StartDate;
+            eventToUpdate.EndDate = dataModel.EndDate;
+            eventToUpdate.Longitude = dataModel.Longitude;
+            eventToUpdate.Latitude = dataModel.Latitude;
+
+            context.SaveChanges();
+        }
         }
 
         [HttpGet]
@@ -86,7 +86,6 @@ namespace Sonar.Web.API
                 EventTypeID = e.EventTypeID
             });
             return response;
-        }
 
         [HttpPost]
         public EventVM CreateEvent(EventVM eventVM)

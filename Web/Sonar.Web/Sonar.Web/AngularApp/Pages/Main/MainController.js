@@ -10,11 +10,10 @@ function MainController($rootScope, $scope, $http) {
     $scope.updateEvent = function () {
         $scope.isUpdating(true);
 
-       // setOtherFields();
-
         $http.post('api/eventsApi/Update/', $scope.currentlySelectedEvent).then(function () {
             $scope.updateProfileMessage = "Successfully event  data...";
             $scope.isUpdating(false);
+            $scope.visibilityOptions.isEventDetailsModalVisible = false;
         });
     }
 
