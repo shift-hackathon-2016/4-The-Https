@@ -11,7 +11,8 @@ function mapDirective() {
 		    events: "=",
 		    visibilityOptions: "=",
 		    location: "=",
-            currentlySelectedEvent:"="
+		    currentlySelectedEvent: "=",
+            isEventsPage: "="
 		},
 		templateUrl: 'AngularApp/Components/googleMap.html',
 		controller: mapController,
@@ -32,6 +33,12 @@ function mapController($scope) {
                 $scope.$apply();
             });
         });
+
+        if ($scope.events.length && $scope.isEventsPage) {
+            var firstEvent = $scope.events[0];
+            var position = new google.maps.LatLng(firstEvent.Latitude, firstEvent.Longitude);
+            googleMap.setCenter(position);
+        }
     });
 }
 
