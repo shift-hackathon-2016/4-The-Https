@@ -21,6 +21,7 @@ namespace Sonar.ViewModels
         public string Contact;
         public string EventType;
         public int EventTypeID;
+        public int? Radius;
     }
 
     public enum EventType
