@@ -38,6 +38,7 @@ function mapController($scope) {
             var firstEvent = $scope.events[0];
             var position = new google.maps.LatLng(firstEvent.Latitude, firstEvent.Longitude);
             googleMap.setCenter(position);
+            googleMap.setZoom(DEFAULT_ZOOM);
         }
     });
 }

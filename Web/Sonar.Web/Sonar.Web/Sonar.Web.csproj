@@ -239,6 +239,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\SidebarVM.cs" />
     <Compile Include="ViewModel\EventPersonVM.cs" />
     <Compile Include="ViewModel\PersonVM.cs" />
     <Compile Include="ViewModel\TownVM.cs" />

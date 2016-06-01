@@ -1,12 +1,14 @@
-﻿<div class="col-xs-8" style="height:90%">
-    <google-map events="events"
-                visibility-options="visibilityOptions"
-                location="currentlySelectedLocation"
-                currently-selected-event="currentlySelectedEvent">
-    </google-map>
-</div>
+﻿<div class="row">
+    <div class="col-xs-9" style="height:90%">
+        <google-map events="events"
+                    visibility-options="visibilityOptions"
+                    location="currentlySelectedLocation"
+                    currently-selected-event="currentlySelectedEvent">
+        </google-map>
+    </div>
 
-<sidebar></sidebar>
+    <sidebar class="col-xs-3"></sidebar>
+</div>
 
 <modal title="View event" visible="visibilityOptions.isEventDetailsModalVisible">
     EVENT DETAILS
