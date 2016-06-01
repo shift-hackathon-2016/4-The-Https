@@ -2,10 +2,9 @@
     <label class="sr-only" for="form-event-name">Name</label>
     <input ng-model="model.Name" type="text" name="EditEvent-name" placeholder="Event name..." class="form-username form-control" id="Edit-event-name">
 </div>
-<div class="form-group">
-    <label class="sr-only" for="form-event-type">Type</label>
-    <input ng-model="model.EventTypeId" type="text" name="EditEvent-type" placeholder="Event type..." class="form-username form-control" id="Edit-event-type">
-</div>
+
+<dropdown class="" model="model.EventTypeID" options="eventTypes"></dropdown>
+
 <div class="form-group">
     <label class="sr-only" for="form-event-description">Description</label>
     <input ng-model="model.Description" type="text" name="EditEvent-description" placeholder="Event description..." class="form-username form-control" id="Edit-event-description">
