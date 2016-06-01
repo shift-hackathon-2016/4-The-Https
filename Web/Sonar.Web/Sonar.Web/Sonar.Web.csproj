@@ -184,6 +184,7 @@
     <Compile Include="IdentityModels\AccountBindingModels.cs" />
     <Compile Include="IdentityModels\AccountViewModels.cs" />
     <Compile Include="IdentityModels\IdentityModels.cs" />
+    <Compile Include="Mappers\EventMapper.cs" />
     <Compile Include="Mappers\PersonMapper.cs" />
     <Compile Include="Model\Comment.cs">
       <DependentUpon>Model1.tt</DependentUpon>

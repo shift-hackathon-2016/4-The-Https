@@ -1,11 +1,9 @@
-﻿<div>
-
-    <div style="float:left; margin-left:20%">
-        <img class="avatar" ng-src="{{profileViewModel.ImageUrl}}" />
+﻿<div class="row">
+    <div class="col-xs-4">
+        <img class="avatar" ng-src="{{profileViewModel.ImageUrl}}"/>
     </div>
 
-    <div style="float:right; margin-right:40%">
-
+    <div class="col-xs-8">
         <label>First Name:</label>
         <input type="text" ng-model="profileViewModel.FirstName" name="form-firstname" placeholder="First Name..." class="form-firstname form-control" id="form-firstname">
         <label>Last Name:</label>
@@ -15,34 +13,16 @@
         <label>Birthday:</label>
         <input ng-model="profileViewModel.BirthDate" name="form-birthday" placeholder="Birthday..." class="form-birthday form-control" id="form-birthday">
         <label>ProfileTypeId</label>
-        <input type="text" ng-value="profileViewModel.ProfileTypeId" />
+        <input type="text" ng-value="profileViewModel.ProfileTypeId"/>
         <label>ProfileType</label>
-        <input type="text" ng-value="profileViewModel.ProfileType" />
+        <input type="text" ng-value="profileViewModel.ProfileType"/>
         <label>Rating:</label>
-        <input type="text" ng-value="profileViewModel.Rating" />
+        <input type="text" ng-value="profileViewModel.Rating"/>
 
         <button type="button" ng-click="updateProfile()">Update</button>
 
-        <br />
+        <br/>
         <p ng-model="updateProfileMessage"></p>
     </div>
 
 </div>
-<script type="text/javascript">
-    function updateTextInput(val) {
-        document.getElementById('textInput').value = val;
-    }
-    function updateRangeInput(val) {
-        document.getElementById('form-range').value = val;
-    }
-</script>
-<style>
-    .avatar {
-        width: 256px;
-        margin: 10px;
-        border: 10px solid red;
-        border-radius: 500px;
-        -webkit-border-radius: 500px;
-        -moz-border-radius: 500px;
-    }
-</style>

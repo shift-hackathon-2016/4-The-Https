@@ -4,6 +4,19 @@ function MainController($rootScope, $scope, $http) {
     $scope.newEvent = {};
     $scope.currentlySelectedLocation = {};
     $scope.currentlySelectedEvent = {}
+    $scope.isUpdating = function (setValue) {
+        return (setValue == true) ? setValue : false;
+    }
+    $scope.updateEvent = function () {
+        $scope.isUpdating(true);
+
+       // setOtherFields();
+
+        $http.post('api/eventsApi/Update/', $scope.currentlySelectedEvent).then(function () {
+            $scope.updateProfileMessage = "Successfully event  data...";
+            $scope.isUpdating(false);
+        });
+    }
 
     $scope.isAddNewEventButtonDisabled = function () {
         return !$scope.newEvent.name || !$scope.newEvent.description || !$scope.newEvent.eventTypeId;
