@@ -1,6 +1,9 @@
 package hr.shiftconference.hackathon.thehttps.eventsonar.models.database;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.support.v4.os.ParcelableCompat;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -12,7 +15,7 @@ import java.util.List;
 /**
  * Created by ANTE on 31.5.2016..
  */
-public class Event {
+public class Event implements Parcelable {
     // FIELDS
     @SerializedName("Id")
     @Expose
@@ -264,4 +267,67 @@ public class Event {
         this.eventPerson = new ArrayList<>();
         this.eventSubscription = new ArrayList<>();
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[] {
+                String.valueOf(this.id),
+                this.name,
+                this.description,
+                String.valueOf(this.startDate),
+                String.valueOf(this.endDate),
+                String.valueOf(this.longitude),
+                String.valueOf(this.latitude),
+                String.valueOf(this.authorId),
+                String.valueOf(this.townId),
+                String.valueOf(this.stateId),
+                this.imageURL,
+                this.contact,
+                String.valueOf(this.eventTypeId),
+                String.valueOf(this.radius),
+                String.valueOf(this.comment),
+                this.person,
+                this.eventType,
+                this.eventState,
+                this.town,
+                String.valueOf(this.eventPerson),
+                String.valueOf(this.eventSubscription)
+        });
+    }
+
+    protected Event(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        description = in.readString();
+        longitude = in.readFloat();
+        latitude = in.readFloat();
+        authorId = in.readInt();
+        townId = in.readInt();
+        stateId = in.readInt();
+        imageURL = in.readString();
+        contact = in.readString();
+        eventTypeId = in.readInt();
+        radius = in.readInt();
+        person = in.readString();
+        eventType = in.readString();
+        eventState = in.readString();
+        town = in.readString();
+    }
+
+    public static final Creator<Event> CREATOR = new Creator<Event>() {
+        @Override
+        public Event createFromParcel(Parcel in) {
+            return new Event(in);
+        }
+
+        @Override
+        public Event[] newArray(int size) {
+            return new Event[size];
+        }
+    };
 }

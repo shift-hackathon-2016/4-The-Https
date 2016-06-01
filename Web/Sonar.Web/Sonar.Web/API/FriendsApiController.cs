@@ -10,6 +10,12 @@ namespace Sonar.Web.Controllers
 {
     public class FriendsApiController : ApiController
     {
+        [HttpPost]
+        public void AddFriend()
+        {
+
+        }
+
         [HttpGet]
         public IEnumerable<PersonVM> GetAllFriendsForUser(string username = "adonlic")
         {
@@ -25,8 +31,11 @@ namespace Sonar.Web.Controllers
             foreach (var friend in friends)
             {
                 context = new hackathon_shift_2016_testEntities();
-                var _person = PersonMapper.Map(context.Person.Single(person => person.Id == friend.Id));
-                viewModels.Add(_person);
+                var _person = context.Person.SingleOrDefault(person => person.Id == friend.Id);
+                if (_person != null)
+                {
+                    viewModels.Add(PersonMapper.Map(_person));
+                }
                 //context.Dispose();
             }
 

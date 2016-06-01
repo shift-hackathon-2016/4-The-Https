@@ -12,6 +12,7 @@ namespace Sonar.Web.Mappers
         {
             return new PersonVM()
             {
+                Id = person.Id,
                 Username = person.Username,
                 Email = person.Email,
                 FirstName = person.FirstName,

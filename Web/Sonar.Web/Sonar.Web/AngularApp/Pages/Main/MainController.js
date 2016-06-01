@@ -14,6 +14,7 @@ function MainController($rootScope, $scope, $http) {
             $scope.updateProfileMessage = "Successfully event  data...";
             $scope.isUpdating(false);
             $scope.visibilityOptions.isEventDetailsModalVisible = false;
+            getAllEvents();
         });
     }
 
@@ -51,10 +52,6 @@ function MainController($rootScope, $scope, $http) {
         $http.get('api/eventsApi/GetAllEventsForUser').then(function (response) {
             $scope.events = response.data;
         });
-
-    }
-    function getDistance() {
-        $http.post('')
 
     }
 }

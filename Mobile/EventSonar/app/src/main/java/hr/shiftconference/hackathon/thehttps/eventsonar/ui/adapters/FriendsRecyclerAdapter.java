@@ -1,8 +1,6 @@
 package hr.shiftconference.hackathon.thehttps.eventsonar.ui.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,89 +14,89 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hr.shiftconference.hackathon.thehttps.eventsonar.R;
-import hr.shiftconference.hackathon.thehttps.eventsonar.models.database.Event;
-import hr.shiftconference.hackathon.thehttps.eventsonar.ui.activities.EventDetailsActivity;
+import hr.shiftconference.hackathon.thehttps.eventsonar.models.database.Person;
 
 /**
- * Created by ANTE on 31.5.2016..
+ * Created by ANTE on 1.6.2016..
  */
-public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAdapter.EventViewHolder> {
-    private List<Event> events;
+public class FriendsRecyclerAdapter extends RecyclerView.Adapter<FriendsRecyclerAdapter.FriendViewHolder> {
+    private List<Person> friends;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public EventsRecyclerAdapter(Context context) {
+    public FriendsRecyclerAdapter(Context context) {
         this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
     }
 
     @Override
-    public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FriendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.list_item_event, parent, false);
-        EventViewHolder eventViewHolder = new EventViewHolder(view);
+        FriendViewHolder eventViewHolder = new FriendViewHolder(view);
 
         return eventViewHolder;
     }
 
     @Override
     public int getItemCount() {
-        if (events == null)
+        if (friends == null)
             return 0;
 
-        return events.size();
+        return friends.size();
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder holder, int position) {
-        Event currentEvent = events.get(position);
+    public void onBindViewHolder(FriendViewHolder holder, int position) {
+        Person currentFriend = friends.get(position);
 
-        holder.setData(currentEvent, position);
+        holder.setData(currentFriend, position);
         holder.setListeners();
     }
 
-    public void setAdapterData(List<Event> events) {
-        this.events = new ArrayList<>();
-        this.events.addAll(events);
+    public void setAdapterData(List<Person> friends) {
+        this.friends = new ArrayList<>();
+        this.friends.addAll(friends);
 
         notifyDataSetChanged();
     }
 
 
 
-    class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView name, description, organizer;
+    class FriendViewHolder extends RecyclerView.ViewHolder {
+        private TextView name, description;
         private ImageView image;
         private int position;
-        private Event current;
+        private Person current;
 
-        public EventViewHolder(View itemView) {
+        public FriendViewHolder(View itemView) {
             super(itemView);
 
             this.name = (TextView) itemView.findViewById(R.id.event_name);
             this.description = (TextView) itemView.findViewById(R.id.event_description);
-            this.organizer = (TextView) itemView.findViewById(R.id.event_organizer);
             this.image = (ImageView) itemView.findViewById(R.id.event_image_view);
         }
 
-        public void setData(Event currentEvent, int position) {
-            this.name.setText(currentEvent.getName());
-            this.description.setText(currentEvent.getDescription());
-            this.organizer.setText(currentEvent.getPerson());
+        public void setData(Person currentFriend, int position) {
+            this.name.setText(currentFriend.getFirstName() + " " + currentFriend.getLastName());
+            this.description.setText(currentFriend.getEmail());
+            /*
             Picasso.with(context)
                     .load(currentEvent.getImageURL())
                     .fit()
                     .centerCrop()
                     .into(this.image);
+                    */
             this.position = position;
-            this.current = currentEvent;
+            this.current = currentFriend;
         }
 
         public void setListeners() {
-            this.name.setOnClickListener(this);
-            this.description.setOnClickListener(this);
-            this.image.setOnClickListener(this);
+            //this.name.setOnClickListener(this);
+            //this.description.setOnClickListener(this);
+            //this.image.setOnClickListener(this);
         }
 
+        /*
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.event_name || v.getId() == R.id.event_description
@@ -110,5 +108,6 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
                 context.startActivity(details);
             }
         }
+        */
     }
 }
