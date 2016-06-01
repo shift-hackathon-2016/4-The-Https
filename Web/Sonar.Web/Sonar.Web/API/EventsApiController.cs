@@ -40,7 +40,6 @@ namespace Sonar.Web.API
                 EventType = e.EventType.Name,
                 EventTypeID = e.EventTypeID,
                 Radius = e.Radius
-                Radius=e.Radius
             });
             return response;
         }
@@ -60,7 +59,6 @@ namespace Sonar.Web.API
             eventToUpdate.Latitude = dataModel.Latitude;
 
             context.SaveChanges();
-        }
         }
 
         [HttpGet]
@@ -86,6 +84,7 @@ namespace Sonar.Web.API
                 EventTypeID = e.EventTypeID
             });
             return response;
+        }
 
         [HttpPost]
         public EventVM CreateEvent(EventVM eventVM)
