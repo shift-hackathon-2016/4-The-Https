@@ -275,6 +275,8 @@
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
     <Content Include="Images\Izrezak.PNG" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\Objasnjenje.PNG" />
     <Content Include="Style\font-awesome.css" />
     <Content Include="Style\font-awesome.min.css" />
     <Content Include="Style\form-elements.css" />
@@ -358,7 +360,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5863</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
