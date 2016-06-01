@@ -1,5 +1,5 @@
-﻿loginController.$inject = ['$scope', '$http', '$window'];
-function loginController($scope, $http, $window) {
+﻿loginController.$inject = ['$scope', '$http', '$location'];
+function loginController($scope, $http, $location) {
 
     $scope.credentials = {
         username: '',
@@ -13,10 +13,11 @@ function loginController($scope, $http, $window) {
     });
 
     $scope.login = function () {
-        console.log(personData.Username);
-        if (personData != null) {
+        if (personData != null && $scope.credentials.username != "" && $scope.credentials.password != "") {
             localStorage.setItem("username", $scope.credentials.username);
             localStorage.setItem("password", $scope.credentials.password);
+            $location.path('/#/profile');
+            $location.replace();
         }
     }
 }
