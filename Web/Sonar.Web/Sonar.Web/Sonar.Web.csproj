@@ -166,6 +166,7 @@
   <ItemGroup>
     <Compile Include="API\EventsApiController.cs" />
     <Compile Include="API\FriendsApiController.cs" />
+    <Compile Include="API\HelperApiController.cs" />
     <Compile Include="API\LoginAPIController.cs" />
     <Compile Include="API\ProfileApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

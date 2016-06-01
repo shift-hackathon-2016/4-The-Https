@@ -63,6 +63,31 @@ namespace Sonar.Web.API
             }
         }
 
+        [HttpGet]
+        public IEnumerable<EventVM> GetEventsAroundUs()
+        {
+            var response = context.Event.Select(e => new EventVM()
+            {
+                Longitude = e.Longitude,
+                Latitude = e.Latitude,
+                Name = e.Name,
+                Description = e.Description,
+                Person = e.Person.FirstName + " " + e.Person.LastName,
+                Id = e.Id,
+                StartDate = e.StartDate,
+                EndDate = e.EndDate,
+                Town = e.Town.Name,
+                TownId = e.TownID,
+                EventState = e.EventState.Name,
+                StateId = e.StateID,
+                ImageUrl = e.ImageUrl,
+                Contact = e.Contact,
+                EventType = e.EventType.Name,
+                EventTypeID = e.EventTypeID
+            });
+            return response;
+        }
+
         [HttpPost]
         public EventVM CreateEvent(EventVM eventVM)
         {
