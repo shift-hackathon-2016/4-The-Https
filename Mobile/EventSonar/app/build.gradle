@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "hr.shiftconference.hackathon.thehttps.eventsonar"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'io.intercom:intercom-java:2.0.0'
+    compile ('io.intercom.android:intercom-sdk:1.+@aar') {
+        transitive = true
+    }
     compile 'com.google.android.gms:play-services:9.0.1'
 }

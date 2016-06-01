@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,24 +21,24 @@ import hr.shiftconference.hackathon.thehttps.eventsonar.models.database.Event;
 import hr.shiftconference.hackathon.thehttps.eventsonar.ui.activities.EventDetailsActivity;
 
 /**
- * Created by ANTE on 31.5.2016..
+ * Created by ANTE on 1.6.2016..
  */
-public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAdapter.EventViewHolder> {
+public class MyEventsRecyclerAdapter extends RecyclerView.Adapter<MyEventsRecyclerAdapter.MyEventViewHolder> {
     private List<Event> events;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public EventsRecyclerAdapter(Context context) {
+    public MyEventsRecyclerAdapter(Context context) {
         this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
     }
 
     @Override
-    public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.list_item_event, parent, false);
-        EventViewHolder eventViewHolder = new EventViewHolder(view);
+    public MyEventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = layoutInflater.inflate(R.layout.list_item_my_event, parent, false);
+        MyEventViewHolder myEventViewHolder = new MyEventViewHolder(view);
 
-        return eventViewHolder;
+        return myEventViewHolder;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder holder, int position) {
+    public void onBindViewHolder(MyEventViewHolder holder, int position) {
         Event currentEvent = events.get(position);
 
         holder.setData(currentEvent, position);
@@ -65,25 +66,30 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
 
 
 
-    class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView name, description, organizer;
+    class MyEventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private TextView name, description, dateCreated, timeOfEvent;
         private ImageView image;
         private int position;
         private Event current;
 
-        public EventViewHolder(View itemView) {
+        public MyEventViewHolder(View itemView) {
             super(itemView);
 
             this.name = (TextView) itemView.findViewById(R.id.event_name);
             this.description = (TextView) itemView.findViewById(R.id.event_description);
-            this.organizer = (TextView) itemView.findViewById(R.id.event_organizer);
+            this.dateCreated = (TextView) itemView.findViewById(R.id.date_added);
+            this.timeOfEvent = (TextView) itemView.findViewById(R.id.time_of_event);
             this.image = (ImageView) itemView.findViewById(R.id.event_image_view);
         }
 
         public void setData(Event currentEvent, int position) {
             this.name.setText(currentEvent.getName());
             this.description.setText(currentEvent.getDescription());
-            this.organizer.setText(currentEvent.getPerson());
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String dCreated = df.format(currentEvent.getStartDate());
+            String tOfEvent = df.format(currentEvent.getEndDate());
+            this.dateCreated.setText(dCreated);
+            this.timeOfEvent.setText(tOfEvent);
             Picasso.with(context)
                     .load(currentEvent.getImageURL())
                     .fit()
