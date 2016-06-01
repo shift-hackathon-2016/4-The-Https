@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using Sonar.Web.Model;
 using Sonar.ViewModels;
+using Sonar.Web.Mappers;
 using System;
 
 namespace Sonar.Web.Controllers
@@ -10,7 +11,30 @@ namespace Sonar.Web.Controllers
     public class FriendsApiController : ApiController
     {
         [HttpGet]
-        public IEnumerable<PersonVM> GetAllFriendsForUser()
+        public IEnumerable<PersonVM> GetAllFriendsForUser(string username = "adonlic")
+        {
+            var context = new hackathon_shift_2016_testEntities();
+            var id = context.Person.Single(_person => _person.Username == username).Id;
+            //context.Dispose();
+
+            context = new hackathon_shift_2016_testEntities();
+            var friends = context.PersonSubscription.Where(_person => _person.SubscriberID == id);
+            //context.Dispose();
+
+            var viewModels = new List<PersonVM>();
+            foreach (var friend in friends)
+            {
+                context = new hackathon_shift_2016_testEntities();
+                var _person = PersonMapper.Map(context.Person.Single(person => person.Id == friend.Id));
+                viewModels.Add(_person);
+                //context.Dispose();
+            }
+
+            return viewModels;
+        }
+
+        [HttpGet]
+        public IEnumerable<PersonVM> GetAllPeople()
         {
             var context = new hackathon_shift_2016_testEntities();
             return context.Person.Select(e => new PersonVM()
