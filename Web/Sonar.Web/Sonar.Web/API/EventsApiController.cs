@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Sonar.ViewModels;
+using Sonar.Web.Mappers;
+using Sonar.Web.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
-using Sonar.ViewModels;
-using Sonar.Web.Model;
 
 namespace Sonar.Web.API
 {
@@ -38,6 +41,25 @@ namespace Sonar.Web.API
                 EventTypeID = e.EventTypeID
             });
             return response;
+        }
+        [HttpPost]
+        public void Update(EventVM eventData)
+        {
+            //var personData = (PersonVM)person;
+
+            var dataModel = EventMapper.Map(eventData);
+
+            using (var context = new Model.hackathon_shift_2016_testEntities())
+            {
+                context.Event.Single(_event => _event.Id == dataModel.Id).Id = dataModel.Id;
+                context.Event.Single(_event => _event.Id == dataModel.Id).Name = dataModel.Name;
+                context.Event.Single(_event => _event.Id == dataModel.Id).Description = dataModel.Description;
+                context.Event.Single(_event => _event.Id == dataModel.Id).StartDate = dataModel.StartDate;
+                context.Event.Single(_event => _event.Id == dataModel.Id).EndDate = dataModel.EndDate;
+                context.Event.Single(_event => _event.Id == dataModel.Id).Longitude = dataModel.Longitude;
+                context.Event.Single(_event => _event.Id == dataModel.Id).Latitude = dataModel.Latitude;
+               context.SaveChanges();
+            }
         }
 
         [HttpPost]
