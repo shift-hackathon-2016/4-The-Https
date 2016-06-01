@@ -169,6 +169,7 @@
     <Compile Include="API\HelperApiController.cs" />
     <Compile Include="API\LoginAPIController.cs" />
     <Compile Include="API\ProfileApiController.cs" />
+    <Compile Include="API\UserApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\EventPersonVM.cs" />
     <Compile Include="ViewModel\PersonVM.cs" />
     <Compile Include="ViewModel\TownVM.cs" />
     <Compile Include="ViewModel\EventVM.cs" />
