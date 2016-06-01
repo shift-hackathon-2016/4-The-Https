@@ -40,7 +40,7 @@ namespace Sonar.Web.API
                 EventType = e.EventType.Name,
                 EventTypeID = e.EventTypeID,
                 Radius = e.Radius
-                Radius=e.Radius
+                
             });
             return response;
         }
