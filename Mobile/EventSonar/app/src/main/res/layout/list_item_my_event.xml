@@ -34,14 +34,45 @@
                 android:text="Event description..."/>
 
             <TextView
-                android:id="@+id/event_organizer"
+                android:id="@+id/number_of_subscribers_for_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/event_description"
-                android:layout_marginTop="10dp"
-                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Event organizer"/>
+                android:text="subscribers"/>
+            <TextView
+                android:id="@+id/time_of_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBaseline="@+id/number_of_subscribers_for_event"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:text="TIME OF EVENT"/>
+            <TextView
+                android:id="@+id/date_added"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/time_of_event"
+                android:textSize="10dp"
+                android:text="DATE CREATED"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/time_of_event"
+                android:layout_toLeftOf="@id/time_of_event"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:text="HAPPENING: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/date_added"
+                android:layout_toLeftOf="@id/time_of_event"
+                android:textSize="10dp"
+                android:text="CREATED: "/>
         </RelativeLayout>
     </RelativeLayout>
 

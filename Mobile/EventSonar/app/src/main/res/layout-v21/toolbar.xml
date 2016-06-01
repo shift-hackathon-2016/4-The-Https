@@ -9,5 +9,10 @@
     android:theme="@style/ToolbarTheme">
 
     <!-- added in case we don't use tabs and we need elevation -->
+    <!--<ImageView
+        android:id="@+id/image_view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="-5dp"/>-->
 
 </android.support.v7.widget.Toolbar>
